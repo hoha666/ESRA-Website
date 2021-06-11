@@ -1,0 +1,412 @@
+﻿
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>
+
+    </title>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="/COMPONENT/Semantic/dist/semantic.min.js"></script>
+    <script src="/JS/common.js"></script>
+
+    <link rel="stylesheet" href="/CSS/font.css" />
+    <link rel="stylesheet" href="/CSS/master-first.css" />
+    <link rel="stylesheet" href="/COMPONENT/hamburgers/dist/hamburgers.css" />
+    <link href="/COMPONENT/fon-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/CSS/result-Template.css" rel="stylesheet" />
+    <link href="/CSS/result-responsive.css" rel="stylesheet" />
+    <style>
+        .height8 {
+            margin-top: 50px;
+        }
+
+        .height3 {
+            height: 86px;
+        }
+
+        .divLastGameRateTitle {
+            margin-top: 50px;
+        }
+        /*.gameLargLogo:nth-child(1){ float:right !important;}*/
+    </style>
+
+    <style>
+        .imgbk4 {
+            overflow: hidden;
+            background-color: #1c1c1c;
+        }
+
+            .imgbk4 p {
+                height: 100%;
+                float: right;
+                right: 25%;
+                position: relative;
+                font-size: 53px;
+                padding: 14px;
+                color: white;
+            }
+
+            .imgbk4 img {
+                height: 100%;
+                float: left;
+                left: 30%;
+                position: relative;
+            }
+
+        .height99 {
+            height: 86px;
+        }
+
+        @media only screen and (max-width: 1050px) {
+            .imgbk4 img {
+                display: none;
+            }
+
+            .imgbk4 p {
+                float: none;
+                right: auto;
+            }
+
+            .imgbk4 {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="./introGame.aspx?gi=61845" id="form1">
+        <div class="aspNetHidden">
+            <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+            <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+        </div>
+
+        <script type="text/javascript">
+            //<![CDATA[
+            var theForm = document.forms['form1'];
+            if (!theForm) {
+                theForm = document.form1;
+            }
+            function __doPostBack(eventTarget, eventArgument) {
+                if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+                    theForm.__EVENTTARGET.value = eventTarget;
+                    theForm.__EVENTARGUMENT.value = eventArgument;
+                    theForm.submit();
+                }
+            }
+            //]]>
+        </script>
+
+
+        <div class="aspNetHidden">
+
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="A85EAB2E" />
+            <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="taoXuyyeR1YAzVSoOaUKi041NgRNu7NMaqhq9EXFlrrcxHLXBQESAsACUEC7fuiUj2xylkIoGPHRIMBVIi4/QrynJWGTsy2FeB+pQFYZWs0O3dHDlf0QaB9VLoquTxd/04xS9kTTMQm4whk9WMTndNb68M4W7Z/Nk32VHseVPr87CMhYJcadFASlXOtnq/qdx8wkWN9qatpqUfMiY6sbrg==" />
+        </div>
+
+
+        <div class="f7f7f7 width100 height1 navTop overlay fixed">
+            <div class="width1000 height1 contCent">
+
+
+
+
+
+                <ul class="nav">
+                    <li style="width: 120px;">
+                        <a class="active" href="/Default.aspx">خانه</a>
+                    </li>
+                    <li style="width: 120px;">
+                        <a href="#">ESRA</a>
+                        <ul>
+                            <li>
+                                <a href="/CMSPages.aspx/معرفی_ESRA">معرفی ESRA</a>
+                            </li>
+                            <li>
+                                <a href="/CMSPages.aspx/فرآیند_رده‌بندی_سنی_بازی_های_رایانه‌ای">فرآیند رده بندی سنی بازی های رایانه ای</a>
+                            </li>
+                            <li>
+                                <a href="/CMSPages.aspx/سوالات_متداول">سوالات متداول</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="width: 120px;">
+                        <a href="#">والدین</a>
+                        <ul>
+                            <li>
+                                <a href="/CMSPages.aspx/آموزش_و_یادگیری">آموزش و یادگیری</a>
+                            </li>
+                            <li>
+                                <a href="/CMSPages.aspx/توصیه_به_والدین">توصیه به والدین</a>
+                            </li>
+                            <li>
+                                <a href="/Consultation.aspx">مشاوره</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="width: 120px;">
+                        <a href="#">معرفی بازی</a>
+                        <ul>
+                            <li>
+                                <a href="/introGameResults.aspx?gn=&g=&a=&pf=1,5,6,7&cp=1&s=LastGame">بازی های کامپیوتری و کنسول</a>
+                            </li>
+                            <li>
+                                <a href="/introGameResults.aspx?gn=&g=&a=&pf=8&cp=1&s=LastGame">باز ی های موبایل</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="width: 120px;">
+                        <a href="/News.aspx">اخبار</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="hamburger hamburger--collapse hamburgerNav">
+                                <div class="hamburger-box">
+                                    <div class="hamburger-inner"></div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <img src="/IMG/logo.png" alt="Alternate Text" class="logo" />
+            </div>
+        </div>
+        <img style="margin-bottom: -7px;" class='width100 imgbk1' src='../IMG/back1.jpg' />
+
+
+        <div class="width100 height99 imgbk4">
+            <p></p>
+            <img src="/IMG/NewsLogo2.png" alt="Alternate Text">
+        </div>
+
+
+
+        <div class="">
+            <div class="width1000 contCent">
+                <div class="dviSearch ffffff">
+                    <div class="hamburger hamburger--collapse hamburgerSearch">
+                        <div class="hamburger-box">
+                            <div class="hamburger-inner"></div>
+                        </div>
+                    </div>
+                    <div onkeypress="javascript:return WebForm_FireDefaultButton(event, &#39;cpBodyMiddle_btnSearch&#39;)">
+
+                        <div class="SubSearch">
+                            <div class="select">
+                                <div class="c_select">
+                                    <option>سبک بازی</option>
+                                    <div id="cpBodyMiddle_ddlGenres" class="js-open-drop"><option id="3">اکشن</option><option id="4">ماجرایی</option><option id="5">اکشن-ماجرایی</option><option id="6">نقش آفرینی</option><option id="7">شبیه سازی</option><option id="8">استراتژی</option><option id="9">ورزشی</option><option id="10">پلتفرمر</option><option id="11">تیراندازی</option><option id="12">مبارزه ای</option><option id="13">مسابقه ای / رانندگی</option><option id="14">گوناگون</option><option id="15">معمایی / فکری</option><option id="16">موسیقی</option><option id="17">آموزشی</option><option id="18">تخته ای/کارتی</option><option id="19">تفننی/امتیازی</option></div>
+
+                                </div>
+                            </div>
+                            <div class="select">
+                                <div class="c_select">
+                                    <option>رده سنی</option>
+                                    <div id="cpBodyMiddle_ddlAges" class="js-open-drop"><option id="1">3+</option><option id="2">7+</option><option id="3">12+</option><option id="4">15+</option><option id="5">18+</option></div>
+                                </div>
+                            </div>
+                            <div class="select">
+                                <div class="c_select">
+                                    <option>پلتفرم بازی</option>
+                                    <div id="cpBodyMiddle_ddlGamePlatform" class="js-open-drop js-intro"><option id="1">pc</option><option id="2">Play Station</option><option id="3">play station2</option><option id="4">play station3</option><option id="5">play station4</option><option id="6">xbox 360</option><option id="7">xbox one</option><option id="8">android</option></div>
+                                </div>
+                            </div>
+                            <div class="select js-ddlGameCategory" style="display: none;">
+                                <div class="c_select">
+                                    <option>دسته بندی</option>
+                                    <div id="cpBodyMiddle_ddlMobileGameType" class="js-open-drop">
+                                        <option id="1">چند نفره</option>
+                                        <option id="2">خردسالان</option>
+                                        <option id="3">مفید و آموزشی</option>
+                                        <option id="4">جذاب و جالب</option>
+                                        <option id="5">معمایی و چالش بر انگیز</option>
+                                        <option id="6">دفاع مقدس</option>
+                                        <option id="7">قرآنی</option>
+                                        <option id="8">ایرانی و اسلامی</option>
+                                        <option id="9">فوتبالی</option>
+                                        <option id="10">ورزشی</option>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>نام بازی</p>
+                            <input name="ctl00$cpBodyMiddle$txtSearchGameName" id="cpBodyMiddle_txtSearchGameName" type="text" />
+
+
+                            <div class="round-button">
+                                <a id="cpBodyMiddle_btnSearch" href="javascript:__doPostBack(&#39;ctl00$cpBodyMiddle$btnSearch&#39;,&#39;&#39;)">
+                                    <div class="round-button-circle"></div>
+                                </a>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ffffff width100 height8 shadow1">
+            <div id="cpBodyMiddle_gameIntro" class="width1000 contCent">
+                <div class="flL gameLargLogoHolder">
+                    <img class=" height100 gameLargLogo" src="uploads/picture/game/gamePic/61845/61845(1).jpg">
+                    <img class=" height100 gameLargLogo" src="uploads/picture/game/gamePic/61845/61845(2).jpg">
+                    <img class=" height100 gameLargLogo" src="uploads/picture/game/gamePic/61845/61845(3).jpg">
+                    <img class=" height100 gameLargLogo" src="uploads/picture/game/gamePic/61845/61845(4).jpg">
+                    <hr />
+                    <div>
+                    </div>
+                </div>
+                <div class="flR contCent height100 ">
+                    <div class="divGameIntro _18RateB">
+                        <p style="direction: ltr;text-align: left;" class="_18RateC">Vanquish</p><p style="font-size:11px;font-family:iransansbold;" class="intro">
+                            نجات ایالات متحده از تسلیم شدن در برابر روسیه جدید
+                        </p>
+                        <div>
+                            <p class="b0b0b0">سبک بازی: </p><p class="cll">اکشن, تیراندازی</p>
+                        </div>
+                        <div>
+                            <p class="b0b0b0">پلتفرم: </p><p class="cll">pc، xbox 360</p>
+                        </div>
+                        <div>
+                            <p class="b0b0b0">سال: </p><p class="cll">2018</p>
+                        </div><div>
+                            <p class="b0b0b0">شرکت سازنده: </p><p class="cll">Platinums</p>
+                        </div>
+                        <div>
+                            <p class="b0b0b0">نوع سورس: </p><p class="cll">ویرایشی</p>
+                        </div><p class="intro">
+                            بازی Vanquish در ژانر تیرانداز سوم&zwnj;شخص (Third Person Shooter) در سال 2010 برای کنسول&zwnj;های Xbox 360 و PS3 انتشار یافت و بعداً در سال 2017 نسخه&zwnj;ای از این بازی برای رایانه&zwnj;های شخصی نیز منتشر شد. بازی فقط دارای بخش تک&zwnj;نفره و داستانی است و فاقد بخش بازی گروهی می&zwnj;باشد. جریان بازی در آینده&zwnj;ای نه چندان دور است. ایستگاه&zwnj;های فضایی و سفینه&zwnj;های فضانورد که در عملیات خارج جو زمین ایفای نقش می&zwnj;کنند. سلاح&zwnj;ها و تجهیزات موجود، در بازی علمی-تخلی (Si-Fi) هستند. ارتش امریکا به تازگی لباس رزمی جدیدی طراحی کرده است که در سطح نسخه اولیه (Prototype) است. این لباس در اختیار Sam (قهرمان داستان) قرار گرفته و تمریناتی را برای استفاده از آن، پشت سر گذاشته است. توجیه حرکات مختلفی که شخصیت بازی انجام می&zwnj;دهد با محوریت این لباس رزمی است. در Vanquish نوع&zwnj;آوری&zwnj;هایی در خصوص تلفیق سبک&zwnj;های مختلف ژانر تیراندازی انجام شده است که این امر سبب به وجود آمدن نوعی روند بازی منحصر به فرد در این بازی شده است. محوریت روند بازی بر اساس سنگرگیری بوده و بازیکن می&zwnj;بایست به انجام درست این کار در هر مرحله پیش برود. لباس رزمی سَم در نقش محافظ، افزایش&zwnj;دهنده سرعت و قدرت برای وی عمل کرده و این امکان را به او می&zwnj;دهد که در شرایط لازم، از حرکت آهسته (Bullet time) استفاده کند. در بازی ضربه&zwnj;های از نزدیک هم می&zwnj;توانند انجام شوند که با وجود کشنده بودن، تمام انرژی لباس را مصرف می&zwnj;کنند. سلاح&zwnj;های مختلف موجود دارای توانایی&zwnj;های مختلف بوده و هر کدام قابلیت ارتقا یافتن دارند. روند کلی بازی و نبردها و زاویه دوربین بسیار شبیه به سری بازی معروف Gears of war است. داستان بازی با به قدرت رسیدن یک گروه رادیکال و خطرناک در روسیه شروع می&zwnj;شود. این افراد که قدرت را درست گرفته&zwnj;اند، به نحوی کنترل یکی از ماهواره&zwnj;های نظامی امریکا را به دست گرفته و سانفرانسیسکو را توسط سلاح موجود در این ماهواره با خاک یکسان می&zwnj;کنند. و تهدید می&zwnj;کنند که امریکا 8 ساعت وقت دارد بدون قید و شرط تسلیم شود و یا نیویورک نیز به سرنوشتی مشابه دچار خواهد شد. Sam که یک سرباز دوره دیده است به همراه گروه خود کمتر از 8 ساعت وقت دارد تا ایستگاه فضایی را از کنترل روس&zwnj;ها خارج کرده و سلاح را بازپس&zwnj;گیری کند. بخش روند بازی با توجه نوع&zwnj;آوری&zwnj;های زیادی که در آن وجود دارد، بهترین قسمت این بازی محسوب می&zwnj;شود. منتقدین زیادی نیز بازی را از جهت روند بازی آن را مورد تمجید قرار داده&zwnj;اند. متاسفانه بخش داستانی بازی بسیار ضعیف بوده و روایت داستان نیز به شیوه&zwnj;ای انجام شده&zwnj; است که مخاطبان را راضی نکرده است. صداگذاری&zwnj;ها و گرافیک بازی نیز از سطح معمول ضعیف&zwnj;تر انجام گرفته&zwnj;اند. انجام بازی فقط به افرادی که در جستجوی روند بازی دلچسب در این ژانر هستند، توصیه می&zwnj;شود.
+                        </p><img data-tilt src="/admin/IMG/esra_skill3.png">
+                        <img data-tilt src="/admin/IMG/esra_violence4.png">
+                        <img data-tilt src="/admin/IMG/esra_fear1.png">
+                        <img data-tilt src="/admin/IMG/drugs4.png"><img data-tilt src="/admin/IMG/esra_anomalies3.png">
+                        <img data-tilt src="/admin/IMG/esra_despair3.png">
+                        <p class="intro">
+                            نیاز است والدین حتما پیش از خرید این بازی چند نکته را بدانند. خشونت موجود در بازی در حد شدید بوده و می&zwnj;تواند بر روی مخاطب تأثیر زیادی بگذارد. دشمنان در اثر برخورد گلوله با نمایش پاشیدن خون جان خود را از می&zwnj;دهند ولی در صورت مرگ با انفجار، اعضای بدن آن&zwnj;ها قطع شده و در محیط ریخته می&zwnj;شود. مصرف دخانیات در این بازی توسط شخصیت اصلی داستان به کرات انجام می&zwnj;شود که می&zwnj;تواند اثر تبلیغی مخرب در این زمینه داشته باشد. گفتار ناشایست و الفاظ رکیک (به زبان انگلیسی) در بازی شنیده می&zwnj;شوند. به سبب فضای داستانی بازی و اتفاقات، حس ناامیدی نیز به مخاطب انتقال می&zwnj;یابد. ESRA انجام این بازی را به افراد زیر 18 سال توصیه نمی&zwnj;کند.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="height4">
+            <div class="width1000 contCent">
+                <div class="divLastGameRateTitle">
+                    <div class="DivTag2"></div>
+                    <div class="DivTag">
+                        <p>
+                            <a href="/introGameResults.aspx?g=3,11&a=5&pf=1,6&s=GameName" id="cpBodyMiddle_relatedGameLink">بازی های مشابه</a>
+                        </p>
+                    </div>
+                </div>
+                <div id="cpBodyMiddle_searchResult" class="clb">
+                    <div class="search-result-temp1">
+                        <a href="introGame.aspx?gi=63695">
+                            <div class="img-search-result">
+                                <span data-tilt alt="" class="img-search-result-rate _18RateB"></span>
+                                <img data-tilt style="position:absolute;" src="/uploads/picture/game/gamePic/63695/" alt="" class="img-search-result " />
+                            </div>
+                        </a><div class="result-game-info"><div class="game-info"><p>نام بازی</p><p class="_18RateC"><a href="introGame.aspx?gi=63695"> 41148:2 </a></p><p>پلتفرم</p><p>android</p><p>سال</p><p>2016</p><p>شرکت سازنده</p><p> </p></div><div class="game-type"></div></div><div class="result-game-describe"><p class="game-describe">  ...<a href="introGame.aspx?gi=63695">ادامه مطلب</a></p></div>
+                    </div><div class="search-result-temp1"><a href="introGame.aspx?gi=63696"><div class="img-search-result"><span data-tilt alt="" class="img-search-result-rate _18RateB"></span><img data-tilt style="position:absolute;" src="/uploads/picture/game/gamePic/63696/" alt="" class="img-search-result " /></div></a><div class="result-game-info"><div class="game-info"><p>نام بازی</p><p class="_18RateC"><a href="introGame.aspx?gi=63696"> 41148:3 </a></p><p>پلتفرم</p><p>android</p><p>سال</p><p>2016</p><p>شرکت سازنده</p><p> </p></div><div class="game-type"></div></div><div class="result-game-describe"><p class="game-describe">  ...<a href="introGame.aspx?gi=63696">ادامه مطلب</a></p></div></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="c1c1c1 width100 height10">
+            <div class="footer height100">
+                <div class="footer__section">
+                    <a href="/Default.aspx">خانه</a>
+                    <a href="#">معرفی اسرا</a>
+                    <a href="#">فرآیند رده بندی سنی بازی های رایانه ای</a>
+                    <a href="#">سوالات متداول</a>
+                    <a href="/signs.aspx">پیکتوگرام</a>
+                    <a href="/ages.aspx#+7">رده بندی بازی ها</a>
+                </div>
+                <div class="footer__section">
+                    <a href="#">آموزش و یادگیری</a>
+                    <a href="#">توصیه به والدین</a>
+                    <a href="/Consultation.aspx">مشاوره</a>
+                </div>
+                <div class="footer__section">
+                    <a href="#">معرفی بازی</a>
+                    <a href="/introGameResults.aspx?gn=&g=&a=&pf=1,5,6,7&cp=1&s=GameName">بازی های کامپیوتری و کنسول</a>
+                    <a href="/introGameResults.aspx?gn=&g=&a=&pf=8&cp=1&s=GameName">بازی های موبایل</a>
+                    <a href="/News.aspx">اخبار</a>
+                </div>
+                <div class="footer__section">
+                    <span class="social">
+                        <a href="https://gap.im/esragames">
+                            <div class="social__icon icon_tele"></div>
+                        </a>
+                        <a href="https://www.instagram.com/esragames/">
+                            <div class="social__icon icon_ins"></div>
+                        </a>
+                        <a href="https://www.aparat.com/esragames">
+
+                            <div class="social__icon icon_apa"></div>
+                        </a>
+
+                    </span>
+                    <p class="address">
+                        تهران-خ مطهری-خ سلیمان خاطر-خ وراوینی-خ زیرک زاده-نبش کوچه گلزار غربی- پلاک ۳۲‌
+                        <br>
+                        ۰۲۱-۸۸۳۱۰۷۳۹
+                        <br>
+                        esra@ircg.ir
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="f7f7f7 width100 height11">
+            <div class="width1000divRate  contCent copyRight">
+                <p>
+                    استفاده از مطالب وبگاه اسرا صرفاً با ذکر منبع بلامانع است.
+                </p>
+            </div>
+        </div>
+
+        <input type="hidden" name="ctl00$cpBodyBottom$hfSearchGenres" id="cpBodyBottom_hfSearchGenres" value="0" />
+        <input type="hidden" name="ctl00$cpBodyBottom$hfSearchAges" id="cpBodyBottom_hfSearchAges" value="0" />
+        <input type="hidden" name="ctl00$cpBodyBottom$hfSearchPlatform" id="cpBodyBottom_hfSearchPlatform" value="0" />
+
+
+        <script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZIooGh5KNuMRAgfSVCqoUiAKUL0J0I9gLJMvlK4hTzFEerxAuhlDSK0iVmmkLwP2WA2&amp;t=636668852816624236" type="text/javascript"></script>
+    </form>
+    <script>
+        var forEach = function (t, o, r) {
+            if ("[object Object]" === Object.prototype.toString.call(t))
+                for (var c in t) {
+                    if (t.hasOwnProperty(c)) Object.prototype.hasOwnProperty.call(t, c) && o.call(r, t[c], c, t);
+                }
+            else for (var e = 0, l = t.length; l > e; e++) o.call(r, t[e], e, t);
+        };
+        var hamburgers = document.querySelectorAll(".hamburger");
+        if (hamburgers.length > 0) {
+            forEach(hamburgers, function (hamburger) {
+                hamburger.addEventListener("click", function () {
+                    this.classList.toggle("is-active");
+                }, false);
+            });
+        };
+        $(document).ready(function () {
+            $('.logo').on('click', function () {
+                window.location.href = "/";
+            });
+        });
+
+
+    </script>
+
+    <a href="#" class="back-to-top">
+        <i class="fa fa-arrow-circle-up"></i>
+    </a>
+</body>
+</html>

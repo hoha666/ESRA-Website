@@ -1,0 +1,727 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CloudNasir" Class="DataClassesBpmsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ISD-PRESENT\MSSQLSERVER2012;Initial Catalog=CloudNasir;User ID=sa" SettingsObjectName="Esra.ConvertToBpmsRating.Properties.Settings" SettingsPropertyName="CloudNasirConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Organizations" Member="Organizations">
+    <Type Name="Organization">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Parent" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AutomaticCoding" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LetterCode" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DocumentCode" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FieldOfWork" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Manager" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Telephone" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Mobilephone" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Website" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Mail" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PostBox" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsMyOrganization" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAnalizGamePart" Member="tblAnalizGameParts">
+    <Type Name="tblAnalizGamePart">
+      <Column Name="IdVersionEsraStatusPictogram" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdGamePart" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblGamePart_tblAnalizGamePart" Member="tblGamePart" ThisKey="IdGamePart" OtherKey="id" Type="tblGamePart" IsForeignKey="true" />
+      <Association Name="tblVersionAnaliz_tblAnalizGamePart" Member="tblVersionAnaliz" ThisKey="IdVersionEsraStatusPictogram" OtherKey="Id" Type="tblVersionAnaliz" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblViewAngleType" Member="tblViewAngleTypes">
+    <Type Name="tblViewAngleType">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tblViewAngleType_tblVersionViewAngle" Member="tblVersionViewAngles" ThisKey="id" OtherKey="idViewAngleType" Type="tblVersionViewAngle" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAreaActivity" Member="tblAreaActivities">
+    <Type Name="tblAreaActivity">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="InBonyad" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tblAreaActivity_tblCompanyAriaActivity" Member="tblCompanyAriaActivities" ThisKey="id" OtherKey="IdAriaActivity" Type="tblCompanyAriaActivity" />
+      <Association Name="tblAreaActivity_tblGameCreatorProject" Member="tblGameCreatorProjects" ThisKey="id" OtherKey="IdAreaActivity" Type="tblGameCreatorProject" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCategory" Member="tblCategories">
+    <Type Name="tblCategory">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="IdParent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdCategoryType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tblCategory_tblCategory" Member="tblCategories" ThisKey="Id" OtherKey="IdParent" Type="tblCategory" />
+      <Association Name="tblCategory_tblVersionGenre" Member="tblVersionGenres" ThisKey="Id" OtherKey="IdGenre" Type="tblVersionGenre" />
+      <Association Name="tblCategory_tblCategory" Member="tblCategory1" ThisKey="IdParent" OtherKey="Id" Type="tblCategory" IsForeignKey="true" />
+      <Association Name="tblCategoryType_tblCategory" Member="tblCategoryType" ThisKey="IdCategoryType" OtherKey="Id" Type="tblCategoryType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCategoryType" Member="tblCategoryTypes">
+    <Type Name="tblCategoryType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="tblCategoryType_tblCategory" Member="tblCategories" ThisKey="Id" OtherKey="IdCategoryType" Type="tblCategory" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCertificationVersion" Member="tblCertificationVersions">
+    <Type Name="tblCertificationVersion">
+      <Column Name="IdVersion" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdPublishCertification" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CommentUser" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CertificationStatus" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tblProducerNExclusiveNUser_tblCertificationVersion" Member="tblProducerNExclusiveNUser" ThisKey="IdUser" OtherKey="Id" Type="tblProducerNExclusiveNUser" IsForeignKey="true" />
+      <Association Name="tblPublishCertification_tblCertificationVersion" Member="tblPublishCertification" ThisKey="IdPublishCertification" OtherKey="Id" Type="tblPublishCertification" IsForeignKey="true" />
+      <Association Name="tblVersion_tblCertificationVersion" Member="tblVersion" ThisKey="IdVersion" OtherKey="Id" Type="tblVersion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCompanyAriaActivity" Member="tblCompanyAriaActivities">
+    <Type Name="tblCompanyAriaActivity">
+      <Column Name="IdAriaActivity" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdOrganizationBonyad" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="InBonyad" Type="System.Boolean" DbType="Bit NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tblAreaActivity_tblCompanyAriaActivity" Member="tblAreaActivity" ThisKey="IdAriaActivity" OtherKey="id" Type="tblAreaActivity" IsForeignKey="true" />
+      <Association Name="tblOrganizationBonyad_tblCompanyAriaActivity" Member="tblOrganizationBonyad" ThisKey="IdOrganizationBonyad" OtherKey="Id" Type="tblOrganizationBonyad" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblConsultation" Member="tblConsultations">
+    <Type Name="tblConsultation">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="QuestionerNameNFamily" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="QuestionerEmail" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="Question" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="QuestionDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TrackingCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Answer" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="AnswerDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IdResponser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tblProducerNExclusiveNUser_tblConsultation" Member="tblProducerNExclusiveNUser" ThisKey="IdResponser" OtherKey="Id" Type="tblProducerNExclusiveNUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCountry" Member="tblCountries">
+    <Type Name="tblCountry">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="LocalName" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="RegionalCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="tblCountry_tblOrganizationBonyad" Member="tblOrganizationBonyads" ThisKey="Id" OtherKey="IdCountry" Type="tblOrganizationBonyad" />
+      <Association Name="tblCountry_tblProducerNExclusiveNUser" Member="tblProducerNExclusiveNUsers" ThisKey="Id" OtherKey="IdCountry" Type="tblProducerNExclusiveNUser" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDeficiencyType" Member="tblDeficiencyTypes">
+    <Type Name="tblDeficiencyType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tblDeficiencyType_tblSourceMedia" Member="tblSourceMedias" ThisKey="Id" OtherKey="IdDeficiencyType" Type="tblSourceMedia" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblEditableType" Member="tblEditableTypes">
+    <Type Name="tblEditableType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="tblEditableType_tblVersion" Member="tblVersions" ThisKey="Id" OtherKey="IdEditableType" Type="tblVersion" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblEsra" Member="tblEsras">
+    <Type Name="tblEsra">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Age" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IdHead" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblEsra_tblEsra" Member="tblEsras" ThisKey="Id" OtherKey="IdHead" Type="tblEsra" />
+      <Association Name="tblEsra_tblVersionEsra" Member="tblVersionEsras" ThisKey="Id" OtherKey="IdEsra" Type="tblVersionEsra" />
+      <Association Name="tblEsra_tblVersionEsra1" Member="tblVersionEsras1" ThisKey="Id" OtherKey="IdSystem" Type="tblVersionEsra" />
+      <Association Name="tblEsra_tblEsra" Member="tblEsra1" ThisKey="IdHead" OtherKey="Id" Type="tblEsra" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblEsraStatus" Member="tblEsraStatus">
+    <Type Name="tblEsraStatus">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="tblEsraStatus_tblVersionEsra" Member="tblVersionEsras" ThisKey="Id" OtherKey="IdEsraStatus" Type="tblVersionEsra" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblEsraType" Member="tblEsraTypes">
+    <Type Name="tblEsraType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tblEsraType_tblVersionEsra" Member="tblVersionEsras" ThisKey="Id" OtherKey="IdEsraType" Type="tblVersionEsra" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblExclusive" Member="tblExclusives">
+    <Type Name="tblExclusive">
+      <Column Name="IdExclusive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Association Name="tblProducerNExclusiveNUser_tblExclusive" Member="tblProducerNExclusiveNUser" ThisKey="IdExclusive" OtherKey="Id" Type="tblProducerNExclusiveNUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblFile" Member="tblFiles">
+    <Type Name="tblFile">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="URL" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="UploadDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FileType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tblFile_tblGamerScreenShot" Member="tblGamerScreenShots" ThisKey="Id" OtherKey="IdFile" Type="tblGamerScreenShot" />
+      <Association Name="tblFile_tblGamerScreenVideo" Member="tblGamerScreenVideos" ThisKey="Id" OtherKey="IdFile" Type="tblGamerScreenVideo" />
+      <Association Name="tblFile_tblIndependentGameCreatorFile" Member="tblIndependentGameCreatorFiles" ThisKey="Id" OtherKey="IdFile" Type="tblIndependentGameCreatorFile" />
+      <Association Name="tblFile_tblOrganizationBonyadFile" Member="tblOrganizationBonyadFiles" ThisKey="Id" OtherKey="IdFile" Type="tblOrganizationBonyadFile" />
+      <Association Name="tblFile_tblPublishCertificationValet" Member="tblPublishCertificationValets" ThisKey="Id" OtherKey="IdFile" Type="tblPublishCertificationValet" />
+      <Association Name="tblFile_tblSourceMediaFile" Member="tblSourceMediaFiles" ThisKey="Id" OtherKey="IdFile" Type="tblSourceMediaFile" />
+      <Association Name="tblFile_tblStaticPageFile" Member="tblStaticPageFiles" ThisKey="Id" OtherKey="IdFile" Type="tblStaticPageFile" />
+      <Association Name="tblFile_tblUserDocumentFile" Member="tblUserDocumentFiles" ThisKey="Id" OtherKey="IdFile" Type="tblUserDocumentFile" />
+      <Association Name="tblFile_tblVersionAnaliz" Member="tblVersionAnalizs" ThisKey="Id" OtherKey="IdFile" Type="tblVersionAnaliz" />
+      <Association Name="tblFile_tblVersionScreenshot" Member="tblVersionScreenshots" ThisKey="Id" OtherKey="IdFile" Type="tblVersionScreenshot" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblFounderGroup" Member="tblFounderGroups">
+    <Type Name="tblFounderGroup">
+      <Column Name="IdOrganizationBonyad" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdUser" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tblOrganizationBonyad_tblFounderGroup" Member="tblOrganizationBonyad" ThisKey="IdOrganizationBonyad" OtherKey="Id" Type="tblOrganizationBonyad" IsForeignKey="true" />
+      <Association Name="tblProducerNExclusiveNUser_tblFounderGroup" Member="tblProducerNExclusiveNUser" ThisKey="IdUser" OtherKey="Id" Type="tblProducerNExclusiveNUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblGame" Member="tblGames">
+    <Type Name="tblGame">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="IdProducer" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PublishDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsOnline" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="WebSite" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Association Name="tblGame_tblVersion" Member="tblVersions" ThisKey="Id" OtherKey="IdGame" Type="tblVersion" />
+      <Association Name="tblOrganizationBonyad_tblGame" Member="tblOrganizationBonyad" ThisKey="IdProducer" OtherKey="Id" Type="tblOrganizationBonyad" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblGameCategory" Member="tblGameCategories">
+    <Type Name="tblGameCategory">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="tblGameCategory_tblVersionCategory" Member="tblVersionCategories" ThisKey="Id" OtherKey="IdCategory" Type="tblVersionCategory" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblGameCreatorProjects" Member="tblGameCreatorProjects">
+    <Type Name="tblGameCreatorProject">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdIndependentGameCreator" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Employer" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Responsibility" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IdAreaActivity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AreaActivityComment" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Association Name="tblAreaActivity_tblGameCreatorProject" Member="tblAreaActivity" ThisKey="IdAreaActivity" OtherKey="id" Type="tblAreaActivity" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblGamePart" Member="tblGameParts">
+    <Type Name="tblGamePart">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tblGamePart_tblAnalizGamePart" Member="tblAnalizGameParts" ThisKey="id" OtherKey="IdGamePart" Type="tblAnalizGamePart" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblGamerScreenShot" Member="tblGamerScreenShots">
+    <Type Name="tblGamerScreenShot">
+      <Column Name="IdSourceMedia" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdFile" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdScreenShotType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblFile_tblGamerScreenShot" Member="tblFile" ThisKey="IdFile" OtherKey="Id" Type="tblFile" IsForeignKey="true" />
+      <Association Name="tblScreenshotType_tblGamerScreenShot" Member="tblScreenshotType" ThisKey="IdScreenShotType" OtherKey="Id" Type="tblScreenshotType" IsForeignKey="true" />
+      <Association Name="tblSourceMedia_tblGamerScreenShot" Member="tblSourceMedia" ThisKey="IdSourceMedia" OtherKey="Id" Type="tblSourceMedia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblGamerScreenVideo" Member="tblGamerScreenVideos">
+    <Type Name="tblGamerScreenVideo">
+      <Column Name="IdSourceMedia" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdFile" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdPictogramFirstLevel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdScreenShotType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GamerComment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="tblFile_tblGamerScreenVideo" Member="tblFile" ThisKey="IdFile" OtherKey="Id" Type="tblFile" IsForeignKey="true" />
+      <Association Name="tblPictogram_tblGamerScreenVideo" Member="tblPictogram" ThisKey="IdPictogramFirstLevel" OtherKey="Id" Type="tblPictogram" IsForeignKey="true" />
+      <Association Name="tblScreenshotType_tblGamerScreenVideo" Member="tblScreenshotType" ThisKey="IdScreenShotType" OtherKey="Id" Type="tblScreenshotType" IsForeignKey="true" />
+      <Association Name="tblSourceMedia_tblGamerScreenVideo" Member="tblSourceMedia" ThisKey="IdSourceMedia" OtherKey="Id" Type="tblSourceMedia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblIdentificationType" Member="tblIdentificationTypes">
+    <Type Name="tblIdentificationType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tblIdentificationType_tblIndependentGameCreatorFile" Member="tblIndependentGameCreatorFiles" ThisKey="Id" OtherKey="IdIdentificationType" Type="tblIndependentGameCreatorFile" />
+      <Association Name="tblIdentificationType_tblOrganizationBonyadFile" Member="tblOrganizationBonyadFiles" ThisKey="Id" OtherKey="IdIdentificationType" Type="tblOrganizationBonyadFile" />
+      <Association Name="tblIdentificationType_tblUserDocumentFile" Member="tblUserDocumentFiles" ThisKey="Id" OtherKey="IdIdentificationType" Type="tblUserDocumentFile" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblIndependentGameCreator" Member="tblIndependentGameCreators">
+    <Type Name="tblIndependentGameCreator">
+      <Column Name="IdUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="tblProducerNExclusiveNUser_tblIndependentGameCreator" Member="tblProducerNExclusiveNUser" ThisKey="IdUser" OtherKey="Id" Type="tblProducerNExclusiveNUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblIndependentGameCreatorFile" Member="tblIndependentGameCreatorFiles">
+    <Type Name="tblIndependentGameCreatorFile">
+      <Column Name="IdIndependentGameCreator" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdFile" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdIdentificationType" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tblFile_tblIndependentGameCreatorFile" Member="tblFile" ThisKey="IdFile" OtherKey="Id" Type="tblFile" IsForeignKey="true" />
+      <Association Name="tblIdentificationType_tblIndependentGameCreatorFile" Member="tblIdentificationType" ThisKey="IdIdentificationType" OtherKey="Id" Type="tblIdentificationType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblLanguage" Member="tblLanguages">
+    <Type Name="tblLanguage">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="LocalName" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Association Name="tblLanguage_tblVersion" Member="tblVersions" ThisKey="Id" OtherKey="IdLanguage" Type="tblVersion" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblLegalProducer" Member="tblLegalProducers">
+    <Type Name="tblLegalProducer">
+      <Column Name="IdProducer" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CEO" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="IsIndependent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tblProducerNExclusiveNUser_tblLegalProducer" Member="tblProducerNExclusiveNUser" ThisKey="IdProducer" OtherKey="Id" Type="tblProducerNExclusiveNUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblMilitary" Member="tblMilitaries">
+    <Type Name="tblMilitary">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tblMilitary_tblProducerNExclusiveNUser" Member="tblProducerNExclusiveNUsers" ThisKey="Id" OtherKey="IdNezamVazife" Type="tblProducerNExclusiveNUser" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblOrganizationBonyad" Member="tblOrganizationBonyads">
+    <Type Name="tblOrganizationBonyad">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RegistrationNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RegistrationDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IdCountry" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdCEO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NationalID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BusinessLicensesExpireDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PostalCode" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Allowed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IdForeignPublisher" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsCommercial" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LicenseNumber" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="tblOrganizationBonyad_tblCompanyAriaActivity" Member="tblCompanyAriaActivities" ThisKey="Id" OtherKey="IdOrganizationBonyad" Type="tblCompanyAriaActivity" />
+      <Association Name="tblOrganizationBonyad_tblFounderGroup" Member="tblFounderGroups" ThisKey="Id" OtherKey="IdOrganizationBonyad" Type="tblFounderGroup" />
+      <Association Name="tblOrganizationBonyad_tblGame" Member="tblGames" ThisKey="Id" OtherKey="IdProducer" Type="tblGame" />
+      <Association Name="tblOrganizationBonyad_tblOrganizationBonyad" Member="tblOrganizationBonyads" ThisKey="Id" OtherKey="IdForeignPublisher" Type="tblOrganizationBonyad" />
+      <Association Name="tblOrganizationBonyad_tblOrganizationBonyadFile" Member="tblOrganizationBonyadFiles" ThisKey="Id" OtherKey="IdOrganizationBonyad" Type="tblOrganizationBonyadFile" />
+      <Association Name="tblOrganizationBonyad_tblProducerNExclusiveNUser" Member="tblProducerNExclusiveNUsers" ThisKey="Id" OtherKey="IdOrganization" Type="tblProducerNExclusiveNUser" />
+      <Association Name="tblOrganizationBonyad_tblVersion" Member="tblVersions" ThisKey="Id" OtherKey="IdProducer" Type="tblVersion" />
+      <Association Name="tblCountry_tblOrganizationBonyad" Member="tblCountry" ThisKey="IdCountry" OtherKey="Id" Type="tblCountry" IsForeignKey="true" />
+      <Association Name="tblOrganizationBonyad_tblOrganizationBonyad" Member="tblOrganizationBonyad1" ThisKey="IdForeignPublisher" OtherKey="Id" Type="tblOrganizationBonyad" IsForeignKey="true" />
+      <Association Name="tblProducerNExclusiveNUser_tblOrganizationBonyad" Member="tblProducerNExclusiveNUser" ThisKey="IdCEO" OtherKey="Id" Type="tblProducerNExclusiveNUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblOrganizationBonyadFile" Member="tblOrganizationBonyadFiles">
+    <Type Name="tblOrganizationBonyadFile">
+      <Column Name="IdOrganizationBonyad" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdFile" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdIdentificationType" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="tblFile_tblOrganizationBonyadFile" Member="tblFile" ThisKey="IdFile" OtherKey="Id" Type="tblFile" IsForeignKey="true" />
+      <Association Name="tblIdentificationType_tblOrganizationBonyadFile" Member="tblIdentificationType" ThisKey="IdIdentificationType" OtherKey="Id" Type="tblIdentificationType" IsForeignKey="true" />
+      <Association Name="tblOrganizationBonyad_tblOrganizationBonyadFile" Member="tblOrganizationBonyad" ThisKey="IdOrganizationBonyad" OtherKey="Id" Type="tblOrganizationBonyad" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPictogram" Member="tblPictograms">
+    <Type Name="tblPictogram">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Type" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IdHead" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblPictogram_tblGamerScreenVideo" Member="tblGamerScreenVideos" ThisKey="Id" OtherKey="IdPictogramFirstLevel" Type="tblGamerScreenVideo" />
+      <Association Name="tblPictogram_tblPictogram" Member="tblPictograms" ThisKey="Id" OtherKey="IdHead" Type="tblPictogram" />
+      <Association Name="tblPictogram_tblVersionAnaliz" Member="tblVersionAnalizs" ThisKey="Id" OtherKey="IdPictogram" Type="tblVersionAnaliz" />
+      <Association Name="tblPictogram_tblVersionPictogram" Member="tblVersionPictograms" ThisKey="Id" OtherKey="IdPictogram" Type="tblVersionPictogram" />
+      <Association Name="tblPictogram_tblPictogram" Member="tblPictogram1" ThisKey="IdHead" OtherKey="Id" Type="tblPictogram" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPlatform" Member="tblPlatforms">
+    <Type Name="tblPlatform">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="tblPlatform_tblVersion" Member="tblVersions" ThisKey="Id" OtherKey="IdPlatform" Type="tblVersion" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblProducerNExclusiveNUser" Member="tblProducerNExclusiveNUsers">
+    <Type Name="tblProducerNExclusiveNUser">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdCountry" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WebSite" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="IdOrganization" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mobile" Type="System.String" DbType="Char(11)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="IdNezamVazife" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblProducerNExclusiveNUser_tblCertificationVersion" Member="tblCertificationVersions" ThisKey="Id" OtherKey="IdUser" Type="tblCertificationVersion" />
+      <Association Name="tblProducerNExclusiveNUser_tblConsultation" Member="tblConsultations" ThisKey="Id" OtherKey="IdResponser" Type="tblConsultation" />
+      <Association Name="tblProducerNExclusiveNUser_tblExclusive" Member="tblExclusives" ThisKey="Id" OtherKey="IdExclusive" Type="tblExclusive" />
+      <Association Name="tblProducerNExclusiveNUser_tblFounderGroup" Member="tblFounderGroups" ThisKey="Id" OtherKey="IdUser" Type="tblFounderGroup" />
+      <Association Name="tblProducerNExclusiveNUser_tblIndependentGameCreator" Member="tblIndependentGameCreators" ThisKey="Id" OtherKey="IdUser" Type="tblIndependentGameCreator" />
+      <Association Name="tblProducerNExclusiveNUser_tblLegalProducer" Member="tblLegalProducers" ThisKey="Id" OtherKey="IdProducer" Type="tblLegalProducer" />
+      <Association Name="tblProducerNExclusiveNUser_tblOrganizationBonyad" Member="tblOrganizationBonyads" ThisKey="Id" OtherKey="IdCEO" Type="tblOrganizationBonyad" />
+      <Association Name="tblProducerNExclusiveNUser_tblPublishCertification" Member="tblPublishCertifications" ThisKey="Id" OtherKey="IdApplicantUser" Type="tblPublishCertification" />
+      <Association Name="tblProducerNExclusiveNUser_tblPublishCertificationValet" Member="tblPublishCertificationValets" ThisKey="Id" OtherKey="IdUserEsra" Type="tblPublishCertificationValet" />
+      <Association Name="tblProducerNExclusiveNUser_tblPublishCertificationValet1" Member="tblPublishCertificationValets1" ThisKey="Id" OtherKey="idUserNezarat" Type="tblPublishCertificationValet" />
+      <Association Name="tblProducerNExclusiveNUser_tblRealProducer" Member="tblRealProducers" ThisKey="Id" OtherKey="IdProducer" Type="tblRealProducer" />
+      <Association Name="tblProducerNExclusiveNUser_tblStaticPage" Member="tblStaticPages" ThisKey="Id" OtherKey="IdAuthor" Type="tblStaticPage" />
+      <Association Name="tblProducerNExclusiveNUser_tblUserDocumentFile" Member="tblUserDocumentFiles" ThisKey="Id" OtherKey="IdUser" Type="tblUserDocumentFile" />
+      <Association Name="tblProducerNExclusiveNUser_tblVersion" Member="tblVersions" ThisKey="Id" OtherKey="IdUser" Type="tblVersion" />
+      <Association Name="tblProducerNExclusiveNUser_tblVersion1" Member="tblVersions1" ThisKey="Id" OtherKey="IdNarrator" Type="tblVersion" />
+      <Association Name="tblProducerNExclusiveNUser_tblVersion2" Member="tblVersions2" ThisKey="Id" OtherKey="IdGamer" Type="tblVersion" />
+      <Association Name="tblProducerNExclusiveNUser_tblVersion3" Member="tblVersions3" ThisKey="Id" OtherKey="IdAnalizor" Type="tblVersion" />
+      <Association Name="tblProducerNExclusiveNUser_tblVersionEsra" Member="tblVersionEsras" ThisKey="Id" OtherKey="IdUser" Type="tblVersionEsra" />
+      <Association Name="tblProducerNExclusiveNUser_tblVersionExclusive" Member="tblVersionExclusives" ThisKey="Id" OtherKey="IdExclusive" Type="tblVersionExclusive" />
+      <Association Name="tblProducerNExclusiveNUser_tblVersionPictogram" Member="tblVersionPictograms" ThisKey="Id" OtherKey="IdUser" Type="tblVersionPictogram" />
+      <Association Name="tblProducerNExclusiveNUser_tblVersionSkill" Member="tblVersionSkills" ThisKey="Id" OtherKey="IdUser" Type="tblVersionSkill" />
+      <Association Name="tblCountry_tblProducerNExclusiveNUser" Member="tblCountry" ThisKey="IdCountry" OtherKey="Id" Type="tblCountry" IsForeignKey="true" />
+      <Association Name="tblMilitary_tblProducerNExclusiveNUser" Member="tblMilitary" ThisKey="IdNezamVazife" OtherKey="Id" Type="tblMilitary" IsForeignKey="true" />
+      <Association Name="tblOrganizationBonyad_tblProducerNExclusiveNUser" Member="tblOrganizationBonyad" ThisKey="IdOrganization" OtherKey="Id" Type="tblOrganizationBonyad" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPublishCertification" Member="tblPublishCertifications">
+    <Type Name="tblPublishCertification">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CertificationNumber" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="StartDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IdApplicantUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ConfermDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SignatureName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="tblPublishCertification_tblCertificationVersion" Member="tblCertificationVersions" ThisKey="Id" OtherKey="IdPublishCertification" Type="tblCertificationVersion" />
+      <Association Name="tblPublishCertification_tblPublishCertificationValet" Member="tblPublishCertificationValets" ThisKey="Id" OtherKey="IdPublishCertification" Type="tblPublishCertificationValet" />
+      <Association Name="tblProducerNExclusiveNUser_tblPublishCertification" Member="tblProducerNExclusiveNUser" ThisKey="IdApplicantUser" OtherKey="Id" Type="tblProducerNExclusiveNUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPublishCertificationValet" Member="tblPublishCertificationValets">
+    <Type Name="tblPublishCertificationValet">
+      <Column Name="IdPublishCertification" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdFile" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdUserEsra" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idUserNezarat" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdScreenshotType" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tblFile_tblPublishCertificationValet" Member="tblFile" ThisKey="IdFile" OtherKey="Id" Type="tblFile" IsForeignKey="true" />
+      <Association Name="tblProducerNExclusiveNUser_tblPublishCertificationValet" Member="tblProducerNExclusiveNUser" ThisKey="IdUserEsra" OtherKey="Id" Type="tblProducerNExclusiveNUser" IsForeignKey="true" />
+      <Association Name="tblProducerNExclusiveNUser_tblPublishCertificationValet1" Member="tblProducerNExclusiveNUser1" ThisKey="idUserNezarat" OtherKey="Id" Type="tblProducerNExclusiveNUser" IsForeignKey="true" />
+      <Association Name="tblPublishCertification_tblPublishCertificationValet" Member="tblPublishCertification" ThisKey="IdPublishCertification" OtherKey="Id" Type="tblPublishCertification" IsForeignKey="true" />
+      <Association Name="tblScreenshotType_tblPublishCertificationValet" Member="tblScreenshotType" ThisKey="IdScreenshotType" OtherKey="Id" Type="tblScreenshotType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblQuality" Member="tblQualities">
+    <Type Name="tblQuality">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="tblQuality_tblVersion" Member="tblVersions" ThisKey="Id" OtherKey="IdQuality" Type="tblVersion" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRate" Member="tblRates">
+    <Type Name="tblRate">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="idHead" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblRate_tblVersionAnaliz" Member="tblVersionAnalizs" ThisKey="id" OtherKey="idRate" Type="tblVersionAnaliz" />
+      <Association Name="tblRate_tblVersionPictogram" Member="tblVersionPictograms" ThisKey="id" OtherKey="IdRate" Type="tblVersionPictogram" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRealProducer" Member="tblRealProducers">
+    <Type Name="tblRealProducer">
+      <Column Name="IdProducer" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsIndependent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tblProducerNExclusiveNUser_tblRealProducer" Member="tblProducerNExclusiveNUser" ThisKey="IdProducer" OtherKey="Id" Type="tblProducerNExclusiveNUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblScreenshotType" Member="tblScreenshotTypes">
+    <Type Name="tblScreenshotType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="tblScreenshotType_tblGamerScreenShot" Member="tblGamerScreenShots" ThisKey="Id" OtherKey="IdScreenShotType" Type="tblGamerScreenShot" />
+      <Association Name="tblScreenshotType_tblGamerScreenVideo" Member="tblGamerScreenVideos" ThisKey="Id" OtherKey="IdScreenShotType" Type="tblGamerScreenVideo" />
+      <Association Name="tblScreenshotType_tblPublishCertificationValet" Member="tblPublishCertificationValets" ThisKey="Id" OtherKey="IdScreenshotType" Type="tblPublishCertificationValet" />
+      <Association Name="tblScreenshotType_tblVersionScreenshot" Member="tblVersionScreenshots" ThisKey="Id" OtherKey="IdScreenshotType" Type="tblVersionScreenshot" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSkillType" Member="tblSkillTypes">
+    <Type Name="tblSkillType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tblSkillType_tblVersionSkill" Member="tblVersionSkills" ThisKey="Id" OtherKey="idSkillType" Type="tblVersionSkill" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSourceMedia" Member="tblSourceMedias">
+    <Type Name="tblSourceMedia">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdVersion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="IdSourceMediaType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdSourceMediaSentType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsDoc" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="GamerComment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IdDeficiencyType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DeficiencyText" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="tblSourceMedia_tblGamerScreenShot" Member="tblGamerScreenShots" ThisKey="Id" OtherKey="IdSourceMedia" Type="tblGamerScreenShot" />
+      <Association Name="tblSourceMedia_tblGamerScreenVideo" Member="tblGamerScreenVideos" ThisKey="Id" OtherKey="IdSourceMedia" Type="tblGamerScreenVideo" />
+      <Association Name="tblSourceMedia_tblSourceMediaFile" Member="tblSourceMediaFiles" ThisKey="Id" OtherKey="IdSourceMedia" Type="tblSourceMediaFile" />
+      <Association Name="tblDeficiencyType_tblSourceMedia" Member="tblDeficiencyType" ThisKey="IdDeficiencyType" OtherKey="Id" Type="tblDeficiencyType" IsForeignKey="true" />
+      <Association Name="tblSourceMediaSentType_tblSourceMedia" Member="tblSourceMediaSentType" ThisKey="IdSourceMediaSentType" OtherKey="Id" Type="tblSourceMediaSentType" IsForeignKey="true" />
+      <Association Name="tblSourceMediaType_tblSourceMedia" Member="tblSourceMediaType" ThisKey="IdSourceMediaType" OtherKey="Id" Type="tblSourceMediaType" IsForeignKey="true" />
+      <Association Name="tblVersion_tblSourceMedia" Member="tblVersion" ThisKey="IdVersion" OtherKey="Id" Type="tblVersion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSourceMediaFile" Member="tblSourceMediaFiles">
+    <Type Name="tblSourceMediaFile">
+      <Column Name="IdSourceMedia" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdFile" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tblFile_tblSourceMediaFile" Member="tblFile" ThisKey="IdFile" OtherKey="Id" Type="tblFile" IsForeignKey="true" />
+      <Association Name="tblSourceMedia_tblSourceMediaFile" Member="tblSourceMedia" ThisKey="IdSourceMedia" OtherKey="Id" Type="tblSourceMedia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSourceMediaSentType" Member="tblSourceMediaSentTypes">
+    <Type Name="tblSourceMediaSentType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="tblSourceMediaSentType_tblSourceMedia" Member="tblSourceMedias" ThisKey="Id" OtherKey="IdSourceMediaSentType" Type="tblSourceMedia" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSourceMediaType" Member="tblSourceMediaTypes">
+    <Type Name="tblSourceMediaType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="tblSourceMediaType_tblSourceMedia" Member="tblSourceMedias" ThisKey="Id" OtherKey="IdSourceMediaType" Type="tblSourceMedia" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSourceType" Member="tblSourceTypes">
+    <Type Name="tblSourceType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="tblSourceType_tblVersion" Member="tblVersions" ThisKey="Id" OtherKey="IdSourceType" Type="tblVersion" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblStaticPage" Member="tblStaticPages">
+    <Type Name="tblStaticPage">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="TitlePictureUrl" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Intro" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Content" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CreationDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IdAuthor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReadMoreLink" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="IsEdited" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IdNewStaticPage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblStaticPage_tblStaticPageFile" Member="tblStaticPageFiles" ThisKey="Id" OtherKey="IdStaticPage" Type="tblStaticPageFile" />
+      <Association Name="tblStaticPage_tblTag" Member="tblTags" ThisKey="Id" OtherKey="IdNews" Type="tblTag" />
+      <Association Name="tblProducerNExclusiveNUser_tblStaticPage" Member="tblProducerNExclusiveNUser" ThisKey="IdAuthor" OtherKey="Id" Type="tblProducerNExclusiveNUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblStaticPageFile" Member="tblStaticPageFiles">
+    <Type Name="tblStaticPageFile">
+      <Column Name="IdStaticPage" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdFile" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tblFile_tblStaticPageFile" Member="tblFile" ThisKey="IdFile" OtherKey="Id" Type="tblFile" IsForeignKey="true" />
+      <Association Name="tblStaticPage_tblStaticPageFile" Member="tblStaticPage" ThisKey="IdStaticPage" OtherKey="Id" Type="tblStaticPage" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTag" Member="tblTags">
+    <Type Name="tblTag">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="IdNews" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tblStaticPage_tblTag" Member="tblStaticPage" ThisKey="IdNews" OtherKey="Id" Type="tblStaticPage" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUserDocumentFile" Member="tblUserDocumentFiles">
+    <Type Name="tblUserDocumentFile">
+      <Column Name="IdUser" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdFile" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdIdentificationType" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="tblFile_tblUserDocumentFile" Member="tblFile" ThisKey="IdFile" OtherKey="Id" Type="tblFile" IsForeignKey="true" />
+      <Association Name="tblIdentificationType_tblUserDocumentFile" Member="tblIdentificationType" ThisKey="IdIdentificationType" OtherKey="Id" Type="tblIdentificationType" IsForeignKey="true" />
+      <Association Name="tblProducerNExclusiveNUser_tblUserDocumentFile" Member="tblProducerNExclusiveNUser" ThisKey="IdUser" OtherKey="Id" Type="tblProducerNExclusiveNUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblVersion" Member="tblVersions">
+    <Type Name="tblVersion">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IdPlatform" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsSourceAvailable" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IdSourceType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdGame" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReleaseDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Introduction" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IntroductionK1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="GamePlay" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ParentRecommendation" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IdQuality" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdProducer" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdEditableType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdLanguage" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsPersian" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsEdited" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IdEditedVersion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OldID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IntroductionMin" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="InAppPayments" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IdUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdNarrator" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdGamer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdAnalizor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GameDuration" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AnalizDuration" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="tblVersion_tblCertificationVersion" Member="tblCertificationVersions" ThisKey="Id" OtherKey="IdVersion" Type="tblCertificationVersion" />
+      <Association Name="tblVersion_tblSourceMedia" Member="tblSourceMedias" ThisKey="Id" OtherKey="IdVersion" Type="tblSourceMedia" />
+      <Association Name="tblVersion_tblVersion" Member="tblVersions" ThisKey="Id" OtherKey="IdEditedVersion" Type="tblVersion" />
+      <Association Name="tblVersion_tblVersionAnaliz" Member="tblVersionAnalizs" ThisKey="Id" OtherKey="IdVersion" Type="tblVersionAnaliz" />
+      <Association Name="tblVersion_tblVersionCategory" Member="tblVersionCategories" ThisKey="Id" OtherKey="IdVersion" Type="tblVersionCategory" />
+      <Association Name="tblVersion_tblVersionEsra" Member="tblVersionEsras" ThisKey="Id" OtherKey="IdVersion" Type="tblVersionEsra" />
+      <Association Name="tblVersion_tblVersionExclusive" Member="tblVersionExclusives" ThisKey="Id" OtherKey="IdVersion" Type="tblVersionExclusive" />
+      <Association Name="tblVersion_tblVersionGenre" Member="tblVersionGenres" ThisKey="Id" OtherKey="IdVersion" Type="tblVersionGenre" />
+      <Association Name="tblVersion_tblVersionNarrat" Member="tblVersionNarrat" ThisKey="Id" OtherKey="IdVersion" Type="tblVersionNarrat" Cardinality="One" />
+      <Association Name="tblVersion_tblVersionPictogram" Member="tblVersionPictograms" ThisKey="Id" OtherKey="IdVersion" Type="tblVersionPictogram" />
+      <Association Name="tblVersion_tblVersionScreenshot" Member="tblVersionScreenshots" ThisKey="Id" OtherKey="IdVersion" Type="tblVersionScreenshot" />
+      <Association Name="tblVersion_tblVersionSkill" Member="tblVersionSkills" ThisKey="Id" OtherKey="idVersion" Type="tblVersionSkill" />
+      <Association Name="tblVersion_tblVersionViewAngle" Member="tblVersionViewAngles" ThisKey="Id" OtherKey="idVersion" Type="tblVersionViewAngle" />
+      <Association Name="tblPlatform_tblVersion" Member="tblPlatform" ThisKey="IdPlatform" OtherKey="Id" Type="tblPlatform" IsForeignKey="true" />
+      <Association Name="tblEditableType_tblVersion" Member="tblEditableType" ThisKey="IdEditableType" OtherKey="Id" Type="tblEditableType" IsForeignKey="true" />
+      <Association Name="tblGame_tblVersion" Member="tblGame" ThisKey="IdGame" OtherKey="Id" Type="tblGame" IsForeignKey="true" />
+      <Association Name="tblLanguage_tblVersion" Member="tblLanguage" ThisKey="IdLanguage" OtherKey="Id" Type="tblLanguage" IsForeignKey="true" />
+      <Association Name="tblOrganizationBonyad_tblVersion" Member="tblOrganizationBonyad" ThisKey="IdProducer" OtherKey="Id" Type="tblOrganizationBonyad" IsForeignKey="true" />
+      <Association Name="tblProducerNExclusiveNUser_tblVersion" Member="tblProducerNExclusiveNUser" ThisKey="IdUser" OtherKey="Id" Type="tblProducerNExclusiveNUser" IsForeignKey="true" />
+      <Association Name="tblProducerNExclusiveNUser_tblVersion1" Member="tblProducerNExclusiveNUser1" ThisKey="IdNarrator" OtherKey="Id" Type="tblProducerNExclusiveNUser" IsForeignKey="true" />
+      <Association Name="tblProducerNExclusiveNUser_tblVersion2" Member="tblProducerNExclusiveNUser2" ThisKey="IdGamer" OtherKey="Id" Type="tblProducerNExclusiveNUser" IsForeignKey="true" />
+      <Association Name="tblProducerNExclusiveNUser_tblVersion3" Member="tblProducerNExclusiveNUser3" ThisKey="IdAnalizor" OtherKey="Id" Type="tblProducerNExclusiveNUser" IsForeignKey="true" />
+      <Association Name="tblQuality_tblVersion" Member="tblQuality" ThisKey="IdQuality" OtherKey="Id" Type="tblQuality" IsForeignKey="true" />
+      <Association Name="tblSourceType_tblVersion" Member="tblSourceType" ThisKey="IdSourceType" OtherKey="Id" Type="tblSourceType" IsForeignKey="true" />
+      <Association Name="tblVersion_tblVersion" Member="tblVersion1" ThisKey="IdEditedVersion" OtherKey="Id" Type="tblVersion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblVersionAnaliz" Member="tblVersionAnalizs">
+    <Type Name="tblVersionAnaliz">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdVersion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdPictogram" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idRate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OccurredTime" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AnalizorComment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="GoEdit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IdFile" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblVersionAnaliz_tblAnalizGamePart" Member="tblAnalizGameParts" ThisKey="Id" OtherKey="IdVersionEsraStatusPictogram" Type="tblAnalizGamePart" />
+      <Association Name="tblFile_tblVersionAnaliz" Member="tblFile" ThisKey="IdFile" OtherKey="Id" Type="tblFile" IsForeignKey="true" />
+      <Association Name="tblRate_tblVersionAnaliz" Member="tblRate" ThisKey="idRate" OtherKey="id" Type="tblRate" IsForeignKey="true" />
+      <Association Name="tblVersion_tblVersionAnaliz" Member="tblVersion" ThisKey="IdVersion" OtherKey="Id" Type="tblVersion" IsForeignKey="true" />
+      <Association Name="tblPictogram_tblVersionAnaliz" Member="tblPictogram" ThisKey="IdPictogram" OtherKey="Id" Type="tblPictogram" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblVersionCategory" Member="tblVersionCategories">
+    <Type Name="tblVersionCategory">
+      <Column Name="IdVersion" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdCategory" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tblGameCategory_tblVersionCategory" Member="tblGameCategory" ThisKey="IdCategory" OtherKey="Id" Type="tblGameCategory" IsForeignKey="true" />
+      <Association Name="tblVersion_tblVersionCategory" Member="tblVersion" ThisKey="IdVersion" OtherKey="Id" Type="tblVersion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblVersionEsra" Member="tblVersionEsras">
+    <Type Name="tblVersionEsra">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdVersion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdEsra" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EsraSummary" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IdEsraType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdSystem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreationDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IdEsraStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ForEdit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tblProducerNExclusiveNUser_tblVersionEsra" Member="tblProducerNExclusiveNUser" ThisKey="IdUser" OtherKey="Id" Type="tblProducerNExclusiveNUser" IsForeignKey="true" />
+      <Association Name="tblEsra_tblVersionEsra" Member="tblEsra" ThisKey="IdEsra" OtherKey="Id" Type="tblEsra" IsForeignKey="true" />
+      <Association Name="tblEsra_tblVersionEsra1" Member="tblEsra1" ThisKey="IdSystem" OtherKey="Id" Type="tblEsra" IsForeignKey="true" />
+      <Association Name="tblEsraStatus_tblVersionEsra" Member="tblEsraStatus" ThisKey="IdEsraStatus" OtherKey="Id" Type="tblEsraStatus" IsForeignKey="true" />
+      <Association Name="tblEsraType_tblVersionEsra" Member="tblEsraType" ThisKey="IdEsraType" OtherKey="Id" Type="tblEsraType" IsForeignKey="true" />
+      <Association Name="tblVersion_tblVersionEsra" Member="tblVersion" ThisKey="IdVersion" OtherKey="Id" Type="tblVersion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblVersionExclusive" Member="tblVersionExclusives">
+    <Type Name="tblVersionExclusive">
+      <Column Name="IdVersion" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdExclusive" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="StartDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="HolderType" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tblProducerNExclusiveNUser_tblVersionExclusive" Member="tblProducerNExclusiveNUser" ThisKey="IdExclusive" OtherKey="Id" Type="tblProducerNExclusiveNUser" IsForeignKey="true" />
+      <Association Name="tblVersion_tblVersionExclusive" Member="tblVersion" ThisKey="IdVersion" OtherKey="Id" Type="tblVersion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblVersionGenre" Member="tblVersionGenres">
+    <Type Name="tblVersionGenre">
+      <Column Name="IdVersion" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdGenre" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tblCategory_tblVersionGenre" Member="tblCategory" ThisKey="IdGenre" OtherKey="Id" Type="tblCategory" IsForeignKey="true" />
+      <Association Name="tblVersion_tblVersionGenre" Member="tblVersion" ThisKey="IdVersion" OtherKey="Id" Type="tblVersion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblVersionNarrat" Member="tblVersionNarrats">
+    <Type Name="tblVersionNarrat">
+      <Column Name="IdVersion" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NarratorSummary" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NarratorStory" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NarratorMetacritic" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="tblVersion_tblVersionNarrat" Member="tblVersion" ThisKey="IdVersion" OtherKey="Id" Type="tblVersion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblVersionPictogram" Member="tblVersionPictograms">
+    <Type Name="tblVersionPictogram">
+      <Column Name="IdVersion" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdPictogram" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdUser" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="isSuggestion" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IdRate" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tblPictogram_tblVersionPictogram" Member="tblPictogram" ThisKey="IdPictogram" OtherKey="Id" Type="tblPictogram" IsForeignKey="true" />
+      <Association Name="tblProducerNExclusiveNUser_tblVersionPictogram" Member="tblProducerNExclusiveNUser" ThisKey="IdUser" OtherKey="Id" Type="tblProducerNExclusiveNUser" IsForeignKey="true" />
+      <Association Name="tblRate_tblVersionPictogram" Member="tblRate" ThisKey="IdRate" OtherKey="id" Type="tblRate" IsForeignKey="true" />
+      <Association Name="tblVersion_tblVersionPictogram" Member="tblVersion" ThisKey="IdVersion" OtherKey="Id" Type="tblVersion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblVersionScreenshot" Member="tblVersionScreenshots">
+    <Type Name="tblVersionScreenshot">
+      <Column Name="IdVersion" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdFile" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdScreenshotType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tblFile_tblVersionScreenshot" Member="tblFile" ThisKey="IdFile" OtherKey="Id" Type="tblFile" IsForeignKey="true" />
+      <Association Name="tblVersion_tblVersionScreenshot" Member="tblVersion" ThisKey="IdVersion" OtherKey="Id" Type="tblVersion" IsForeignKey="true" />
+      <Association Name="tblScreenshotType_tblVersionScreenshot" Member="tblScreenshotType" ThisKey="IdScreenshotType" OtherKey="Id" Type="tblScreenshotType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblVersionSkill" Member="tblVersionSkills">
+    <Type Name="tblVersionSkill">
+      <Column Name="idSkillType" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idVersion" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdUser" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="isSuggestion" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Rate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblProducerNExclusiveNUser_tblVersionSkill" Member="tblProducerNExclusiveNUser" ThisKey="IdUser" OtherKey="Id" Type="tblProducerNExclusiveNUser" IsForeignKey="true" />
+      <Association Name="tblSkillType_tblVersionSkill" Member="tblSkillType" ThisKey="idSkillType" OtherKey="Id" Type="tblSkillType" IsForeignKey="true" />
+      <Association Name="tblVersion_tblVersionSkill" Member="tblVersion" ThisKey="idVersion" OtherKey="Id" Type="tblVersion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblVersionViewAngle" Member="tblVersionViewAngles">
+    <Type Name="tblVersionViewAngle">
+      <Column Name="idViewAngleType" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idVersion" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tblVersion_tblVersionViewAngle" Member="tblVersion" ThisKey="idVersion" OtherKey="Id" Type="tblVersion" IsForeignKey="true" />
+      <Association Name="tblViewAngleType_tblVersionViewAngle" Member="tblViewAngleType" ThisKey="idViewAngleType" OtherKey="id" Type="tblViewAngleType" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

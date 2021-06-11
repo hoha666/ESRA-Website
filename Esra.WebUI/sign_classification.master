@@ -1,0 +1,185 @@
+﻿<%@ Master Language="C#" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <asp:ContentPlaceHolder ID="cpMeta" runat="server"></asp:ContentPlaceHolder>
+   <title>نظام ارزیابی و رده بندی سنی بازی های رایانه ای - اسرا</title>
+    <%--JS is here--%>
+    <script src="/JS/jquery-3.1.1.js"></script>
+    <script src="/COMPONENT/Semantic/dist/semantic.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="fav.ico" />
+    <script src="/JS/common.js"></script>
+    <%--CSS is here--%>
+    <link rel="stylesheet" href="/CSS/font.css" />
+    <link rel="stylesheet" href="/CSS/master-sign_classification.css" />
+    <link rel="stylesheet" href="/COMPONENT/hamburgers/dist/hamburgers.css" />
+    <link href="/COMPONENT/fon-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <%--content place holder is here--%>
+    <asp:ContentPlaceHolder ID="cpHead" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ContentPlaceHolder ID="cpBodyTop" runat="server"></asp:ContentPlaceHolder>
+        <div class="f7f7f7 width100 height1 navTop overlay fixed">
+            <div class="width1000 height1 contCent">
+                <%--                <div class="navau">--%>
+                <%--                    <a href="#">ثبت نام</a>--%>
+                <%--                    <br />--%>
+                <%--                    <a href="#">ورود</a>--%>
+                <%--                </div>--%>
+                <ul class="nav">
+                    <li style="width: 120px;">
+                        <a class="active" href="/Default.aspx">خانه</a>
+                    </li>
+                    <li style="width: 120px;">
+                        <a href="#">ESRA</a>
+                        <ul>
+                           <li>
+                                <a href="/CMSPages.aspx/معرفی_ESRA">معرفی ESRA</a>
+                            </li>
+                            <li>
+                                <a href="/CMSPages.aspx/فرآیند_رده‌بندی_سنی_بازی_های_رایانه‌ای">فرآیند رده بندی سنی بازی های رایانه ای</a>
+                            </li>
+                            <li>
+                                <a href="/CMSPages.aspx/سوالات_متداول">سوالات متداول</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="width: 120px;">
+                        <a href="#">والدین</a>
+                        <ul>
+                            <li>
+                                <a href="/CMSPages.aspx/آموزش_و_یادگیری">آموزش و یادگیری</a>
+                            </li>
+                            <li>
+                                <a href="/CMSPages.aspx/توصیه_به_والدین">توصیه به والدین</a>
+                            </li>
+                            <li>
+                                <a href="/Consultation.aspx">مشاوره</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="width: 120px;">
+                        <a href="/introGameResults.aspx?s=LastGame">معرفی بازی</a>
+                        <ul>
+                            <li>
+                                <a href="/introGameResults.aspx?gn=&g=&a=&pf=1,5,6,7&cp=1&s=GameYear">بازی های کامپیوتری و کنسول</a>
+                            </li>
+                            <li>
+                                <a href="/introGameResults.aspx?gn=&g=&a=&pf=8&cp=1&s=LastGame">باز ی های موبایل</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="width: 120px;">
+                        <a href="/News.aspx">اخبار</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="hamburger hamburger--collapse hamburgerNav">
+                                <div class="hamburger-box">
+                                    <div class="hamburger-inner"></div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <img src="IMG/logo.png" alt="Alternate Text" class="logo" />
+            </div>
+        </div>
+        <div class=" width100 height6 ">
+            <div class="width1000 contCent ">
+                <a href="#دخانیات" class="divCart cart1 js-loadCart"></a>
+                <a href="#مهارت_بازی" class="divCart cart2 js-loadCart"></a>
+                <a href="#ترس" class="divCart cart3 js-loadCart"></a>
+                <a href="#خشونت" class="divCart cart4 js-loadCart"></a>
+                <a href="#ناهنجاری_اجتماعی" class="divCart cart5 js-loadCart"></a>
+                <a href="#یاس_ناامیدی" class="divCart cart6 js-loadCart"></a>
+            </div>
+        </div>
+        <div class="width100 height3 imgbk2">
+            <p>علائم هشدار</p>
+            <img src="/IMG/NewsLogo3.png" alt="Alternate Text" />
+        </div>
+        <asp:ContentPlaceHolder ID="cpBodyMiddle" runat="server"></asp:ContentPlaceHolder>
+        <div class="c1c1c1 width100 height10">
+            <div class="footer height100">
+                <div class="footer__section">
+                    <a href="/Default.aspx">خانه</a>
+                    <a href="#">معرفی اسرا</a>
+                    <a href="#">فرآیند رده بندی سنی بازی های رایانه ای</a>
+                    <a href="#">سوالات متداول</a>
+                    <a href="/signs.aspx">پیکتوگرام</a>
+                    <a href="/ages.aspx#+7">رده بندی بازی ها</a>
+                </div>
+                <div class="footer__section">
+                    <a href="#">آموزش و یادگیری</a>
+                    <a href="#">توصیه به والدین</a>
+                    <a href="/Consultation.aspx">مشاوره</a>
+                </div>
+                <div class="footer__section">
+                    <a href="/introGameResults.aspx">معرفی بازی</a>
+                    <a href="/introGameResults.aspx?gn=&g=&a=&pf=1,5,6,7&cp=1&s=GameName">بازی های کامپیوتری و کنسول</a>
+                    <a href="/introGameResults.aspx?gn=&g=&a=&pf=8&cp=1&s=GameName">بازی های موبایل</a>
+                    <a href="/News.aspx">اخبار</a>
+                </div>
+                <div class="footer__section">
+                    <span class="social">
+                        <a href="https://telegram.me/ESRA_ORG_IR">
+                            <div class="social__icon icon_tele"></div>
+                        </a>
+                        <a href="https://www.instagram.com/ESRA_ORG_IR/">
+                            <div class="social__icon icon_ins"></div>
+                        </a>
+                        <a href="#">
+
+                            <div class="social__icon icon_apa"></div>
+                        </a>
+                       
+                    </span>
+                    <p class="address">
+                        تهران-خ مطهری-خ سلیمان خاطر-خ وراوینی-خ زیرک زاده-نبش کوچه گلزار غربی- پلاک ۳۲‌
+                    <br>
+                        ۰۲۱-۸۸۳۱۰۷۳۹
+                    <br>
+                        esra@ircg.ir
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="f7f7f7 width100 height11">
+            <div class="width1000divRate  contCent copyRight">
+                <p>
+                    استفاده از مطالب وبگاه اسرا صرفاً با ذکر منبع بلامانع است.
+                </p>
+            </div>
+        </div>
+        <asp:ContentPlaceHolder ID="cpBodyBottom" runat="server"></asp:ContentPlaceHolder>
+    </form>
+    <script>
+        var forEach = function (t, o, r) {
+            if ("[object Object]" === Object.prototype.toString.call(t))
+                for (var c in t) {
+                    if (t.hasOwnProperty(c)) Object.prototype.hasOwnProperty.call(t, c) && o.call(r, t[c], c, t)
+                }
+            else for (var e = 0, l = t.length; l > e; e++) o.call(r, t[e], e, t);
+        };
+        var hamburgers = document.querySelectorAll(".hamburger");
+        if (hamburgers.length > 0) {
+            forEach(hamburgers, function (hamburger) {
+                hamburger.addEventListener("click", function () {
+                    this.classList.toggle("is-active");
+                }, false);
+            });
+        };
+        $(document).ready(function () {
+            $('.logo').on('click', function () {
+                window.location.href = "/";
+            });
+        });
+    </script>
+    <a href="#" class="back-to-top" >
+        <i class="fa fa-arrow-circle-up"></i>
+    </a>
+</body>
+</html>

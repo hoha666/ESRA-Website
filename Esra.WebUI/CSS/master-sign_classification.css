@@ -1,0 +1,173 @@
+﻿.shadow1 {
+    -webkit-box-shadow: 0px 2px 5px -2px #8e8e8e;
+    -moz-box-shadow: 0px 2px 5px -2px #8e8e8e;
+    box-shadow: 0px 2px 5px -2px #8e8e8e;
+    margin-bottom: 2px;
+}
+
+.navTop {
+    background-image: -webkit-linear-gradient(-90deg, #1c1c1c 0%, #1c1c1c 50%, #f7f7f7 50%);
+    background-image: linear-gradient(-90deg, #1c1c1c 0%, #1c1c1c 50%, #f7f7f7 50%);
+    -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 1);
+}
+
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #1c1c1c;
+    height: 100%;
+    float: right;
+}
+
+    .nav > li {
+        float: right;
+        border-left: solid 1px #959494;
+    }
+
+        .nav > li > a:hover {
+            -webkit-box-shadow: inset 0px -5px 0px 0px #1fb25a;
+            -moz-box-shadow: inset 0px -5px 0px 0px #1fb25a;
+            box-shadow: inset 0px -5px 0px 0px #1fb25a;
+        }
+
+        .nav > li:last-child {
+            border: none;
+        }
+
+    .nav li > a {
+        display: block;
+        color: #d0d0d0;
+        text-align: center;
+        padding: 29px 20px;
+        text-decoration: none;
+        line-height: 22px;
+            font-family: "IRANSansLight";
+    font-size: 15px;
+    }
+
+    .nav > li > a:hover {
+        background-color: #111;
+    }
+
+    .nav > li > ul > li > a {
+        display: none;
+        background-color: #111;
+        border: none;
+        color: white;
+        padding: 5px;
+        font-size: 9px;
+        position: relative;
+        z-index: 99999;
+        /*width: 100px;*/
+    }
+
+    .nav > li:hover > ul > li > a {
+        display: block;
+        border-bottom: 1px solid #2f2f2f;
+    }
+
+        .nav > li:hover > ul > li > a:hover {
+            background-color: #2c2c2c;
+        }
+
+.navau {
+    float: right;
+    width: 73px;
+    height: 72px;
+    background-color: #1c1c1c;
+    border-left: solid 1px #959494;
+}
+
+    .navau a:first-child {
+        float: left;
+        padding: 20px 0px 0px 50px;
+        color: #646464;
+        width: 39px;
+    }
+
+    .navau a {
+        float: left;
+        padding: 10px 0px 0px 50px;
+        clear: both;
+        color: #646464;
+    }
+
+.logo {
+    padding: 10px;
+    float: left;
+    cursor: pointer;
+
+}
+
+.imgbk1 {
+    background: url(../IMG/newsCover.jpg) no-repeat;
+    -ms-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+    background-position: center center;
+}
+
+.imgbk2 {
+    overflow: hidden;
+    background-color: #27b35a;
+}
+
+    .imgbk2 img {
+        height: 100%;
+        float: left;
+        left: 30%;
+        position: relative;
+    }
+
+    .imgbk2 p {
+        height: 100%;
+        float: right;
+        right: 25%;
+        position: relative;
+        font-size: 53px;
+        padding: 14px;
+        color: white;
+    }
+
+.back-to-top {
+    background: none;
+    margin: 30px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 100;
+    display: none;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #1fb25a;
+    padding: 0px;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+}
+
+    .back-to-top i {
+        font-size: 60px;
+    }
+
+.overlay {
+    padding: 0em;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    /*transition: all 1s ease;*/ /*background: transparent;*/
+}
+
+/* fixed */
+
+.fixed.overlay {
+    position: fixed;
+    background-color: #FFFFFF; /*padding: 1em;*/
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.9);
+    z-index: 10000;
+    width: 100%;
+    top: 0;
+}

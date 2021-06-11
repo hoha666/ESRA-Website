@@ -1,0 +1,113 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esra.WebUI", "Esra.WebUI\Esra.WebUI.csproj", "{554FD5D3-E64F-4635-A54A-512E96869A37}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CD81BBBB-CC20-4E19-9BDE-CDB258316D81} = {CD81BBBB-CC20-4E19-9BDE-CDB258316D81}
+		{54DBAEC7-B834-40E0-9BBE-28F9A919906E} = {54DBAEC7-B834-40E0-9BBE-28F9A919906E}
+		{DDE043D2-A156-4EF0-929C-92F1AB4A9A74} = {DDE043D2-A156-4EF0-929C-92F1AB4A9A74}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esra.Dal", "Esra.Dal\Esra.Dal.csproj", "{FDEA9174-7673-4E8B-AA44-1402EDFBEE64}"
+	ProjectSection(ProjectDependencies) = postProject
+		{54DBAEC7-B834-40E0-9BBE-28F9A919906E} = {54DBAEC7-B834-40E0-9BBE-28F9A919906E}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esra.COMMON", "Esra.COMMON\Esra.COMMON.csproj", "{54DBAEC7-B834-40E0-9BBE-28F9A919906E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esra.BUSINESS", "Esra.BUSINESS\Esra.BUSINESS.csproj", "{CD81BBBB-CC20-4E19-9BDE-CDB258316D81}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FDEA9174-7673-4E8B-AA44-1402EDFBEE64} = {FDEA9174-7673-4E8B-AA44-1402EDFBEE64}
+		{54DBAEC7-B834-40E0-9BBE-28F9A919906E} = {54DBAEC7-B834-40E0-9BBE-28F9A919906E}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esra.DalBpms", "Esra.DalBpms\Esra.DalBpms.csproj", "{08E5EF2A-B27F-44C5-A1D3-6FFD4CDDBA05}"
+	ProjectSection(ProjectDependencies) = postProject
+		{54DBAEC7-B834-40E0-9BBE-28F9A919906E} = {54DBAEC7-B834-40E0-9BBE-28F9A919906E}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esra.BUSINESSBpms", "Esra.BUSINESSBpms\Esra.BUSINESSBpms.csproj", "{DDE043D2-A156-4EF0-929C-92F1AB4A9A74}"
+	ProjectSection(ProjectDependencies) = postProject
+		{08E5EF2A-B27F-44C5-A1D3-6FFD4CDDBA05} = {08E5EF2A-B27F-44C5-A1D3-6FFD4CDDBA05}
+		{54DBAEC7-B834-40E0-9BBE-28F9A919906E} = {54DBAEC7-B834-40E0-9BBE-28F9A919906E}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esra.ConvertToBpms", "Esra.ConvertToBpms\Esra.ConvertToBpms.csproj", "{00E211C1-4F5A-491D-AAAE-FB4B6CFBE82E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esra.ConvertToBpmsRating", "Esra.ConvertToBpmsRating\Esra.ConvertToBpmsRating.csproj", "{E74D14CA-F9F4-4D8B-A875-9E0186C0F2A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{554FD5D3-E64F-4635-A54A-512E96869A37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{554FD5D3-E64F-4635-A54A-512E96869A37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{554FD5D3-E64F-4635-A54A-512E96869A37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{554FD5D3-E64F-4635-A54A-512E96869A37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDEA9174-7673-4E8B-AA44-1402EDFBEE64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDEA9174-7673-4E8B-AA44-1402EDFBEE64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDEA9174-7673-4E8B-AA44-1402EDFBEE64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDEA9174-7673-4E8B-AA44-1402EDFBEE64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54DBAEC7-B834-40E0-9BBE-28F9A919906E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54DBAEC7-B834-40E0-9BBE-28F9A919906E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54DBAEC7-B834-40E0-9BBE-28F9A919906E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54DBAEC7-B834-40E0-9BBE-28F9A919906E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD81BBBB-CC20-4E19-9BDE-CDB258316D81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD81BBBB-CC20-4E19-9BDE-CDB258316D81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD81BBBB-CC20-4E19-9BDE-CDB258316D81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD81BBBB-CC20-4E19-9BDE-CDB258316D81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08E5EF2A-B27F-44C5-A1D3-6FFD4CDDBA05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08E5EF2A-B27F-44C5-A1D3-6FFD4CDDBA05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08E5EF2A-B27F-44C5-A1D3-6FFD4CDDBA05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08E5EF2A-B27F-44C5-A1D3-6FFD4CDDBA05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDE043D2-A156-4EF0-929C-92F1AB4A9A74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDE043D2-A156-4EF0-929C-92F1AB4A9A74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDE043D2-A156-4EF0-929C-92F1AB4A9A74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDE043D2-A156-4EF0-929C-92F1AB4A9A74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00E211C1-4F5A-491D-AAAE-FB4B6CFBE82E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00E211C1-4F5A-491D-AAAE-FB4B6CFBE82E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00E211C1-4F5A-491D-AAAE-FB4B6CFBE82E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00E211C1-4F5A-491D-AAAE-FB4B6CFBE82E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E74D14CA-F9F4-4D8B-A875-9E0186C0F2A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E74D14CA-F9F4-4D8B-A875-9E0186C0F2A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E74D14CA-F9F4-4D8B-A875-9E0186C0F2A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E74D14CA-F9F4-4D8B-A875-9E0186C0F2A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://armin1990.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Esra.BUSINESS\\Esra.BUSINESS.csproj
+		SccProjectName1 = Esra.BUSINESS
+		SccLocalPath1 = Esra.BUSINESS
+		SccProjectUniqueName2 = Esra.COMMON\\Esra.COMMON.csproj
+		SccProjectName2 = Esra.COMMON
+		SccLocalPath2 = Esra.COMMON
+		SccProjectUniqueName3 = Esra.Dal\\Esra.Dal.csproj
+		SccProjectName3 = Esra.Dal
+		SccLocalPath3 = Esra.Dal
+		SccProjectUniqueName4 = Esra.WebUI\\Esra.WebUI.csproj
+		SccProjectName4 = Esra.WebUI
+		SccLocalPath4 = Esra.WebUI
+		SccProjectUniqueName5 = Esra.DalBpms\\Esra.DalBpms.csproj
+		SccProjectName5 = Esra.DalBpms
+		SccLocalPath5 = Esra.DalBpms
+		SccProjectUniqueName6 = Esra.BUSINESSBpms\\Esra.BUSINESSBpms.csproj
+		SccProjectName6 = Esra.BUSINESSBpms
+		SccLocalPath6 = Esra.BUSINESSBpms
+		SccProjectUniqueName7 = Esra.ConvertToBpms\\Esra.ConvertToBpms.csproj
+		SccProjectName7 = Esra.ConvertToBpms
+		SccLocalPath7 = Esra.ConvertToBpms
+		SccProjectUniqueName8 = Esra.ConvertToBpmsRating\\Esra.ConvertToBpmsRating.csproj
+		SccProjectName8 = Esra.ConvertToBpmsRating
+		SccLocalPath8 = Esra.ConvertToBpmsRating
+	EndGlobalSection
+EndGlobal

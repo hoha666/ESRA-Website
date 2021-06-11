@@ -1,0 +1,421 @@
+﻿@media only screen and (max-width: 2045px) {
+    .nav > li:last-child {
+        display: none;
+    }
+
+    .nav > li:nth-last-child(2) {
+        border: none;
+    }
+
+    .nav > li {
+        display: block;
+    }
+
+    .hamburgerNav {
+        display: none !important;
+    }
+
+    .hamburgerSearch {
+        display: none !important;
+    }
+
+    .SubSearch {
+        display: block;
+    }
+
+    .nav > li > ul > li > a {
+        display: none;
+    }
+
+    .nav > li > ul {
+        display: block;
+    }
+
+    .js-open-drop {
+        width: 130px;
+    }
+}
+
+@media only screen and (max-width: 1020px) {
+    .dviSearch {
+        width: 800px;
+        margin: -34px calc(100% / 2 - 400px);
+    }
+
+    .js-open-drop {
+        width: 99px;
+    }
+
+
+
+    .select {
+        margin: 13px 148px 0px 0px;
+        width: 99px;
+    }
+
+    select {
+        width: 99px;
+    }
+
+    .dviSearch input {
+        width: 280px;
+    }
+
+    .divRate {
+        width: 414px;
+    }
+
+    .divNews {
+        width: 230px;
+        margin: 50px 0px 25px calc(100% / 3 - 210px);
+    }
+
+    .height5 .divNews:nth-child(3n+3) {
+        float: left;
+    }
+
+    .imgbk2 {
+        display: none;
+    }
+
+    .width1000 {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 961px) {
+    .gameLargLogo {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+
+    .divGameIntro {
+        width: 100%;
+        height: initial;
+        background-position: 0% 10%;
+    }
+
+        .divGameIntro > p:nth-child(5) {
+            height: 100%;
+        }
+}
+
+@media only screen and (max-width: 845px) {
+    .imgbk1 {
+        margin: 165px 0px -3px 0;
+    }
+
+    .width800 {
+        width: 100%;
+    }
+
+    .imgbk2 {
+        display: none;
+    }
+
+    .dviSearch {
+        width: 617px;
+        margin: -34px calc(100% / 2 - 309px);
+    }
+
+    .js-open-drop {
+        width: 95px;
+    }
+
+    .height5 .divNews:nth-child(3n+3) {
+        float: left;
+    }
+
+    .divNews {
+        margin: 50px 0px 25px calc(100% / 3 - 215px);
+    }
+
+    .divRate {
+        width: 357px;
+    }
+
+    .logo {
+        padding: 10px;
+        margin: 0 auto;
+        display: block;
+        clear: both;
+        float: none;
+    }
+
+    .navau {
+        display: none;
+    }
+
+    .navTop {
+        background: #FFFFFF none !important;
+    }
+
+    .height1 {
+        height: auto;
+    }
+
+    .nav {
+        width: 100%;
+    }
+
+        .nav > li {
+            clear: both;
+            width: 100% !important;
+            border-left: none;
+            border-bottom: solid 1px #959494;
+            display: none;
+        }
+
+            .nav > li > a:hover {
+                box-shadow: none;
+                background-color: #292929;
+            }
+
+        .nav li > a {
+            padding: 10px 0px !important;
+        }
+
+        .nav > li:last-child {
+            border-bottom: solid 1px #959494;
+            display: block;
+        }
+
+        .nav > li:nth-last-child(2) {
+            border-bottom: solid 1px #959494;
+        }
+
+        .nav > li > ul > li > a {
+            width: 100%;
+            border-bottom: 1px solid #2f2f2f;
+        }
+
+        .nav > li:hover > ul > li > a {
+            /*display: none;*/
+        }
+
+    .hamburgerNav {
+        display: block !important;
+    }
+
+    .nav > li > ul > li > a {
+        display: block;
+    }
+
+    .nav > li > ul {
+        display: none;
+    }
+
+    .height2 {
+        margin-top: 158px !important;
+    }
+}
+
+@media only screen and (max-width: 815px) {
+
+    .divNews {
+        margin: 50px 0px 25px 0;
+        width: 48%;
+        min-height: auto;
+    }
+
+
+    .height5 .divNews:nth-child(3n+3) {
+        float: right;
+    }
+
+    .height5 .divNews:nth-child(3n+2) {
+        float: left;
+    }
+
+    .height6 {
+        display: inline-table;
+    }
+
+    .divCart {
+        margin: 18px calc(100% / 7 - 64px) 35px 0px;
+    }
+
+
+    .height8 {
+        display: inline-table;
+    }
+
+    .height9 {
+        height: auto;
+    }
+
+    .height10 {
+        height: auto;
+        display: flex;
+    }
+
+    .footer__section:first-child, .footer__section {
+        margin: 0px;
+        clear: both;
+        width: 100%;
+        text-align: center;
+    }
+
+        .footer__section a {
+            width: 100%;
+        }
+
+    .footer {
+        width: 100%;
+    }
+
+    .social {
+        margin: 0 20%;
+    }
+
+        .social a {
+            margin: 12px calc(100% / 5 - 25px) 5px 0px;
+        }
+
+    .divRate p:nth-child(2n) {
+        width: 207px;
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .divRate {
+        width: 100%;
+    }
+
+    .DivAboutEsra p:nth-child(3) {
+        padding: 27px 98px 25px;
+    }
+
+    .divRate p:nth-child(2n) {
+        width: 492px;
+    }
+}
+
+@media only screen and (max-width: 660px) {
+
+    .select {
+        clear: both;
+        width: 99%;
+        margin: 0 auto;
+        float: none;
+    }
+
+    .js-open-drop {
+        width: 99%;
+    }
+
+    select {
+        width: 100%;
+    }
+
+    .select:nth-child(n+2) {
+        margin: auto;
+    }
+
+    .dviSearch {
+        background: none;
+        height: auto;
+        width: 100%;
+        margin: auto;
+    }
+
+    .SubSearch {
+        display: none;
+    }
+
+    .height3 {
+        height: auto;
+    }
+
+    .dviSearch p {
+        margin: 41px 0px 0px 0px;
+        width: 15%;
+    }
+
+    .dviSearch input {
+        margin: 33px 0px 0px 0px;
+        width: 84%;
+    }
+
+    .round-button {
+        float: none;
+        margin: 68px auto 5px auto;
+    }
+
+    .height10 {
+        height: auto;
+        display: flex;
+    }
+
+    .hamburgerSearch {
+        display: block !important;
+    }
+
+    .divRate p:nth-child(2n) {
+        width: 334px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    a.divCart.cart4 {
+        clear: both;
+    }
+
+    .divCart {
+        margin: 18px calc(100% / 4 - 56px) 35px 0px;
+    }
+
+    .DivAboutEsra p:nth-child(2) {
+        padding: 5px 25px 0px;
+    }
+
+    .DivAboutEsra p:nth-child(3) {
+        padding: 27px 25px 25px;
+    }
+
+    .height9 {
+        height: auto;
+    }
+
+    .divRate p:nth-child(2n) {
+        width: 274px;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .divNews {
+        margin: 50px 0px 25px 0;
+        width: 99%;
+        min-height: 0px;
+    }
+
+    .height5 .divNews:nth-child(3n+3) {
+        float: right;
+    }
+
+    .height5 .divNews:nth-child(3n+2) {
+        float: right;
+    }
+
+    .dviSearch > input {
+        width: 267px;
+        margin: 7px calc(100% / 2 - 135px);
+    }
+
+    .divRate p {
+        margin-right: 60px;
+    }
+
+        .divRate p:first-child, .divRate p:nth-child(2), .divRate p:nth-child(2n) {
+            width: auto;
+            max-width: 143px;
+        }
+
+        .divRate p:nth-child(2n) {
+            width: 274px;
+        }
+}
+
+@media only screen and (max-width: 370px) {
+}

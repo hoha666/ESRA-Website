@@ -1,0 +1,785 @@
+﻿html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.red {
+    background-color: red !important;
+}
+
+
+.blue {
+    background-color: blue !important;
+}
+
+.ffffff {
+    background-color: #ffffff !important;
+}
+
+.f7f7f7 {
+    background-color: #f7f7f7 !important;
+}
+
+.e1e1e1 {
+    background-color: #e1e1e1 !important;
+}
+
+.c1c1c1 {
+    background-color: #1c1c1c !important;
+}
+
+.width100 {
+    width: 100%;
+}
+
+.width1080 {
+    width: 1080px;
+}
+
+.width1000 {
+    width: 1000px;
+}
+
+.width800 {
+    width: 800px;
+}
+
+.height1 {
+    height: 79px;
+}
+
+.height2 {
+    height: 279px;
+    border-top: solid 1px #252525;
+    border-bottom: solid 1px #252525;
+
+}
+
+.height3 {
+    height: 86px !important;
+}
+
+.height4 {
+    height: 146px;
+}
+
+.height5 {
+    min-height: 713px;
+    display: flex;
+}
+
+    .height5 .divRate:nth-child(odd) {
+        float: left;
+    }
+
+    .height5 .divNews:nth-child(3n + 3) {
+        margin-left: 0px;
+    }
+
+.height6 {
+    height: 147px;
+    border-top: solid 1px #a2d6b7;
+    border-bottom: solid 1px #a2d6b7;
+    margin-top: 79px;
+
+}
+
+.height7 {
+    height: 35px;
+    border-bottom: solid 1px #e4e4e4;
+}
+
+.height8 {
+    height: 403px;
+    display: inline-table;
+}
+
+.height9 {
+    height: 378px;
+}
+
+.height10 {
+    height: 225px;
+}
+
+.height11 {
+    height: 54px;
+}
+
+.contCent {
+    margin: 0 auto;
+    border: none;
+}
+
+.height100 {
+    height: 100%;
+}
+
+.clb {
+    clear: both !important;
+}
+
+.cll {
+    clear: left !important;
+}
+
+.flR {
+    float: right;
+}
+
+.flL {
+    float: left;
+}
+
+
+
+.dviSearch {
+    width: 1000px;
+    height: 110px;
+    margin: -34px calc(100% / 2 - 500px);
+    position: relative;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 2px 2px 2px 2px;
+    -moz-border-radius: 2px 2px 2px 2px;
+    -webkit-border-radius: 2px 2px 2px 2px;
+    background: url(../IMG/searchline.png) no-repeat 113px 57px;
+    display: inline-block;
+}
+
+    .dviSearch p {
+        float: right;
+        clear: right;
+        margin: 41px 148px 0px 0px;
+    }
+
+    .dviSearch input {
+        float: right;
+        margin: 33px 13px 0px 0px;
+        width: 375px;
+        line-height: 25px;
+        font-family: inherit;
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border: 1px solid #e1e1e1;
+        text-align: center;
+    }
+
+.divLastGameRateTitle {
+    float: right;
+    border-right: solid 2px #959494;
+    width: 99%;
+    height: 59px;
+    margin: 40px 0px 5px 0px;
+}
+
+.divRate {
+    width: 477px;
+    min-height: 83px;
+    float: right;
+    margin: 5px 0px 15px 0px;
+    -webkit-box-shadow: 0 0 0 1px #cbcbcb inset;
+    -ms-box-shadow: 0 0 0 1px #cbcbcb inset;
+    box-shadow: 0 0 0 1px #cbcbcb inset;
+}
+
+    .divRate p {
+        padding: 1px;
+        margin: 3px 100px 3px 0px;
+        color: #b0b0b0;
+        float: right;
+        clear: both;
+        width: 40px;
+    }
+
+        .divRate p:nth-child(2n) {
+            width: auto;
+            margin-right: 5px;
+            color: black;
+        }
+
+        .divRate p:first-child, .divRate p:nth-child(2) {
+            margin-top: 15px;
+        }
+
+._3Rate {
+    background: url(../IMG/3green.png) no-repeat 97%;
+    background-size: contain;
+}
+
+._3RateC {
+    color: #57bc72 !important;
+}
+
+._7Rate {
+    background: url(../IMG/7green.png) no-repeat 97%;
+    background-size: contain;
+}
+
+._7RateC {
+    color: #1fb25a !important;
+}
+
+._12Rate {
+    background: url(../IMG/12orang.png) no-repeat 97%;
+    background-size: contain;
+}
+
+._12RateC {
+    color: #faa61a !important;
+}
+
+._15Rate {
+    background: url(../IMG/15orang.png) no-repeat 97%;
+    background-size: contain;
+}
+
+._15RateC {
+    color: #f58220 !important;
+}
+
+._18Rate {
+    background: url(../IMG/18red.png) no-repeat 97%;
+    background-size: contain;
+}
+
+._18RateC {
+    color: #ed1b2c !important;
+}
+
+.divNews {
+    width: 298px;
+    min-height: 370px;
+    float: right;
+    margin: 50px 0px 25px 50px;
+    border: solid #d5d5d5 .5px;
+}
+
+
+.DivNewsImg {
+    width: 100%;
+    height: 200px;
+    background-size: cover !important;
+}
+
+
+.DivTag {
+    background-color: #1c1c1c;
+    height: 30px;
+    float: right;
+    margin-top: 13px;
+    /*margin-right: -.1px;*/
+}
+
+    .DivTag p {
+        color: white;
+        padding: 9px 30px;
+        text-align: center;
+    }
+
+    .DivTag p {
+        color: white;
+        padding: 9px 30px;
+        text-align: center;
+    }
+
+        .DivTag p a {
+            color: white;
+            text-decoration: none;
+        }
+
+
+.DivTag2 {
+    background-image: url("../IMG/newArrowRight.png");
+    width: 13px;
+    height: 43px;
+    margin-top: 7px;
+    float: right;
+    margin-right: -13px;
+}
+
+.NewsTitle {
+    text-align: center;
+    color: #1fb25a;
+    font-size: 14px;
+    margin-top: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 6px 14px 5px 25px;
+}
+
+.NewsSubTitle {
+    padding: 5px 15px 15px 15px;
+    line-height: 15px;
+    font-size: 10px;
+    min-height: 95px;
+}
+
+.divNews a {
+    text-decoration: none;
+    float: left;
+    padding: 10px;
+    font-size: 10px;
+    color: #6ddc00;
+}
+
+.divCart {
+    float: right;
+    margin: 18px calc(100% / 6 - 84px) 35px 0px;
+    width: 75px;
+    height: 107px;
+    float: right;
+}
+
+    .divCart:first-child { /*margin-right: 122.5px;*/
+    }
+
+    .divCart:last-child { /*margin-left: 122.5px;*/
+    }
+
+.cart1 {
+    background-image: url("../IMG/dokhaniat.jpg");
+}
+
+.cart2 {
+    background-image: url("../IMG/maharateBazi.jpg");
+}
+
+.cart3 {
+    background-image: url("../IMG/tars.jpg");
+}
+
+.cart4 {
+    background-image: url("../IMG/khoshoonat.jpg");
+}
+
+.cart5 {
+    background-image: url("../IMG/nahanjari.jpg");
+}
+
+.cart6 {
+    background-image: url("../IMG/yasonaomidi.jpg");
+}
+
+
+.divMoreNews {
+    width: 230px;
+    height: 50px;
+    margin: auto;
+    border-top: solid 1px #1fb25a;
+    text-align: center;
+    padding-top: 5px;
+}
+
+    .divMoreNews a {
+        color: #1fb25a;
+        text-decoration: none;
+    }
+
+.divGameIntro {
+    float: right;
+    border-right: solid 2px #959494;
+    width: 374px;
+    background: url(../IMG/15orang.png) no-repeat 0% 20%;
+}
+
+    .divGameIntro > p {
+        float: right;
+        clear: right;
+        margin: 20px 10px 5px 20px;
+        font-size: 22px;
+    }
+
+        .divGameIntro > p:nth-child(4) {
+            margin-top: 10px;
+            font-size: 13px;
+        }
+
+        .divGameIntro > p:nth-child(5) {
+            font-size: 11px;
+            line-height: 18px;
+            margin: 20px 0px 5px;
+        }
+
+    .divGameIntro img {
+        float: left;
+        margin-left: 10px;
+    }
+
+        .divGameIntro img:nth-child(6) {
+            float: left;
+            margin-left: 0px;
+        }
+
+.gameLargLogo {
+    width: 569px;
+    height: 400px;
+    float: left;
+}
+
+.DivAge {
+    /*text-align: center;*/
+    font-size: 11px;
+}
+
+    .DivAge > p:first-child {
+        padding-top: 38px;
+        font-size: 25px;
+    }
+
+    .DivAge > p:nth-child(2) {
+        padding: 5px 71px 0px;
+        line-height: 25px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .DivAge > p:nth-child(3) {
+        padding: 27px 30% 25px;
+        line-height: 25px;
+        font-size: 12px;
+        font-family: "IRANSansBold";
+        font-size: 13px;
+        text-align: center;
+    }
+
+.DivAboutEsra {
+    text-align: center;
+    font-size: 11px;
+}
+
+    .DivAboutEsra p:first-child {
+        padding-top: 38px;
+        font-size: 25px;
+    }
+
+    .DivAboutEsra p:nth-child(2) {
+        padding: 5px 71px 0px;
+        line-height: 16px;
+    }
+
+    .DivAboutEsra p:nth-child(3) {
+        padding: 27px 229px 25px;
+        line-height: 16px;
+        color: #1fb25a;
+    }
+
+.auLogo {
+    margin: auto;
+    width: 242px;
+}
+
+.footer {
+}
+
+.footer__section {
+    width: 22%;
+    margin-top: 50px;
+    float: right;
+}
+
+    .footer__section:first-child {
+        margin-right: 92px;
+    }
+
+    .footer__section a {
+        float: right;
+        clear: right;
+        text-decoration: none;
+        color: #a5a5a5;
+        line-height: 18px;
+        font-size: 9px;
+    }
+
+    .footer__section .address {
+        text-align: center;
+        color: #dadada;
+        line-height: 25px;
+        font-size: 9px;
+    }
+
+.copyRight p {
+    text-align: center;
+    padding: 20px;
+}
+
+.social {
+    display: flex;
+}
+
+    .social a {
+        margin: -20px calc(100% / 4 - 25px) 35px 0px;
+    }
+
+.social__icon {
+    width: 30px;
+    height: 30px;
+    float: right;
+}
+
+.icon_pin {
+    background: url("../IMG/pin.png") no-repeat;
+}
+
+.icon_lin {
+    background: url("../IMG/lin.png") no-repeat;
+}
+
+.icon_twi {
+    background: url("../IMG/twi.png") no-repeat;
+}
+
+.icon_fac {
+    background: url("../IMG/fac.png") no-repeat;
+}
+.icon_tele {
+    background: url("../IMG/tele.png") no-repeat;
+}
+.icon_ins {
+    background: url("../IMG/ins.png") no-repeat;
+}
+.icon_apa {
+    background: url("../IMG/apa.png") no-repeat;
+}
+
+.select {
+    border: 1px solid #e3e3e3;
+    height: 24px;
+    width: 131px;
+    display: block;
+    margin: 13px 144px 0px 0px;
+    float: right;
+}
+
+    .select:nth-child(n + 2) {
+        margin: 13px 18px 0px 0px;
+    }
+
+.c_select {
+    text-align: center;
+    height: 12px;
+    padding: 6px 0px;
+    background: #464646 url("../IMG/drar.png") no-repeat;
+    border: 0;
+    outline: none;
+    /*width: 131px;*/
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 12px;
+}
+
+    .c_select > option {
+        padding-bottom: 4px;
+        cursor: pointer;
+        display: block;
+    }
+
+    .c_select > .js-open-drop {
+        display: none;
+        margin-top: 1px;
+    }
+
+.js-open-drop option {
+    background-color: #464646;
+    height: auto;
+    position: relative;
+    padding: 6px;
+    border-bottom: 1px solid #d8d8d8;
+    cursor: pointer;
+    display: block;
+}
+
+    .js-open-drop option.js-active {
+        background-color: green;
+    }
+
+.round-button {
+    width: 74px;
+    float: left;
+    margin: -18.5px 22.5px 22.5px 37px;
+}
+
+.round-button-circle {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    background: transparent url("../IMG/searchbutton.png") no-repeat;
+}
+
+    .round-button-circle:hover {
+        background: linear-gradient(to right, #e0f3cf 0%, #d2f3cf 100%), url(../IMG/searchbutton.png) no-repeat;
+        background-blend-mode: multiply;
+    }
+
+.cartGreen3 {
+    background-image: url("../IMG/3green.png");
+}
+
+.cartGreen7 {
+    background-image: url("../IMG/7green.png");
+}
+
+.cartOrang12 {
+    background-image: url("../IMG/12orang.png");
+}
+
+.cartOrang15 {
+    background-image: url("../IMG/15orang.png");
+}
+
+.cartRed18 {
+    background-image: url("../IMG/18red.png");
+}
+.cart18B {background-image: url("../IMG/18redB.png");}
+.cart15B {background-image: url("../IMG/15orangB.png");}
+.cart12B {background-image: url("../IMG/12orangB.png");}
+.cart7B {background-image: url("../IMG/7greenB.png");}
+.cart3B {background-image: url("../IMG/3greenB.png");}
+
+._4881 {
+    width: 48px;
+    height: 81px;
+    background-repeat: no-repeat;
+    float: right;
+    margin: 20px calc(100% / 6 - 40px) 35px 0px;
+}
+
+.hamburgerSearch {
+    text-align: center;
+}
+
+    .hamburgerSearch .hamburger-inner::before, .hamburgerSearch .hamburger-inner::after, .hamburgerSearch .hamburger-inner {
+        background-color: black;
+    }
+
+.center {
+    text-align: center;
+}
+
+.pagination {
+    display: inline-block;
+    margin: 15px 0;
+}
+
+    .pagination a {
+        color: black;
+        float: right;
+        padding: 13px 15px 10px 15px;
+        text-decoration: none;
+        transition: background-color .3s;
+        border: 1px solid #ddd;
+        margin: 4px;
+    }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+.news {
+    /* height: 60px; */
+    margin: 70px 0px 0px 0px;
+    background: #FFFFFF;
+    overflow: hidden;
+}
+
+    .news h1 {
+        color: #af4148;
+        margin-right: 380px;
+    }
+
+    .news h2 {
+        margin-right: 380px;
+        padding-top: 8px;
+        line-height: 25px;
+        margin-bottom: 5px;
+    }
+
+    .news h4 {
+        margin-right: 380px;
+        padding-top: 8px;
+    }
+
+    .news article {
+        line-height: 20px;
+        direction: rtl;
+        text-align: justify;
+        padding-top: 10px;
+    }
+
+        .news article > img {
+            width: 320px;
+            float: right;
+            padding: 0px 0px 20px 60px;
+            /*margin-top: -80px;*/
+        }
+
+.newsImageList img {
+    /*background-color: #00aeef;*/
+    width: 33%;
+}
+
+.newsImageList {
+    clear: both;
+    margin: 10px 0px;
+}
